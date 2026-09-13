@@ -1,0 +1,2286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Genesys Cloud | Demo interactiva de orquestación</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYwIiBoZWlnaHQ9IjI2MCIgdmlld0JveD0iMCAwIDI2MCAyNjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xNTQuNTExIDE2NC4wODZIMTM2LjYwN0MxMjkuMzIxIDE2NC4wODYgMTIyLjMzMyAxNjYuOTE5IDExNy4xODEgMTcxLjk2MkMxMTIuMDI5IDE3Ny4wMDQgMTA5LjEzNCAxODMuODQ0IDEwOS4xMzQgMTkwLjk3NUMxMDkuMTM0IDE5OC4xMDYgMTEyLjAyOSAyMDQuOTQ1IDExNy4xODEgMjA5Ljk4OEMxMjIuMzMzIDIxNS4wMzEgMTI5LjMyMSAyMTcuODYzIDEzNi42MDcgMjE3Ljg2M0gxNTQuNTExQzE2MS43OTcgMjE3Ljg2MyAxNjguNzg1IDIxNS4wMzEgMTczLjkzNyAyMDkuOTg4QzE3OS4wODkgMjA0Ljk0NSAxODEuOTg0IDE5OC4xMDYgMTgxLjk4NCAxOTAuOTc1QzE4MS45ODQgMTgzLjg0NCAxNzkuMDg5IDE3Ny4wMDQgMTczLjkzNyAxNzEuOTYyQzE2OC43ODUgMTY2LjkxOSAxNjEuNzk3IDE2NC4wODYgMTU0LjUxMSAxNjQuMDg2WiIgZmlsbD0iI0ZGNDUxQSIvPgo8cGF0aCBkPSJNMTUyLjc2OCA5NC41OTAzSDEwNy4yMzJDOTkuMzk4NSA5NC41OTAzIDkxLjg4NTcgOTcuNjQxMSA4Ni4zNDY1IDEwMy4wNzJDODAuODA3MiAxMDguNTAyIDc3LjY5NTMgMTE1Ljg2NyA3Ny42OTUzIDEyMy41NDdDNzcuNjk1MyAxMzEuMjI3IDgwLjgwNzIgMTM4LjU5MiA4Ni4zNDY1IDE0NC4wMjNDOTEuODg1NyAxNDkuNDUzIDk5LjM5ODUgMTUyLjUwNCAxMDcuMjMyIDE1Mi41MDRIMTUyLjc2OEMxNTYuNjQ3IDE1Mi41MDQgMTYwLjQ4OCAxNTEuNzU1IDE2NC4wNzEgMTUwLjNDMTY3LjY1NSAxNDguODQ1IDE3MC45MTEgMTQ2LjcxMiAxNzMuNjU0IDE0NC4wMjNDMTc2LjM5NiAxNDEuMzM0IDE3OC41NzIgMTM4LjE0MiAxODAuMDU2IDEzNC42MjhDMTgxLjU0MSAxMzEuMTE1IDE4Mi4zMDUgMTI3LjM1IDE4Mi4zMDUgMTIzLjU0N0MxODIuMzA1IDExOS43NDUgMTgxLjU0MSAxMTUuOTc5IDE4MC4wNTYgMTEyLjQ2NkMxNzguNTcyIDEwOC45NTMgMTc2LjM5NiAxMDUuNzYgMTczLjY1NCAxMDMuMDcyQzE3MC45MTEgMTAwLjM4MyAxNjcuNjU1IDk4LjI0OTggMTY0LjA3MSA5Ni43OTQ1QzE2MC40ODggOTUuMzM5MyAxNTYuNjQ3IDk0LjU5MDMgMTUyLjc2OCA5NC41OTAzWiIgZmlsbD0iI0ZGNDUxQSIvPgo8cGF0aCBkPSJNMTQwLjU3MyA2Mi4zMjQxQzE0MC41NzMgNTAuOTAwOSAxNDkuODMzIDQxLjY0MDYgMTYxLjI1NyA0MS42NDA2QzE3Mi42OCA0MS42NDA2IDE4MS45NCA1MC45MDA5IDE4MS45NCA2Mi4zMjQxQzE4MS45NCA3My43NDcyIDE3Mi42OCA4My4wMDc1IDE2MS4yNTcgODMuMDA3NUMxNDkuODMzIDgzLjAwNzUgMTQwLjU3MyA3My43NDcyIDE0MC41NzMgNjIuMzI0MVoiIGZpbGw9IiNGRjQ1MUEiLz4KPC9zdmc+Cg==">
+  <style>
+    :root{
+      --navy:#162B45;
+      --navy-2:#0E1B2E;
+      --navy-3:#07111F;
+      --orange:#FF451A;
+      --orange-2:#FF7A45;
+      --sky:#66D7FF;
+      --mint:#6BE7B4;
+      --violet:#B9A1FF;
+      --pink:#FF79B0;
+      --yellow:#FFD166;
+      --red:#FF6179;
+      --ink:#F8FAFF;
+      --muted:#B8C2D6;
+      --soft:#7E8CA8;
+      --line:#344B68;
+      --card:#102139;
+      --card-2:#142A47;
+      --glass:rgba(16,33,57,.78);
+      --glass-2:rgba(255,255,255,.07);
+      --shadow:0 24px 80px rgba(0,0,0,.38);
+      --shadow-soft:0 15px 45px rgba(0,0,0,.24);
+      --radius:24px;
+      --radius-sm:16px;
+      --speed:.38s;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Roboto", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 14% 6%, rgba(255,79,31,.24), transparent 29%),
+        radial-gradient(circle at 82% 4%, rgba(102,215,255,.16), transparent 27%),
+        radial-gradient(circle at 50% 94%, rgba(185,161,255,.15), transparent 31%),
+        linear-gradient(135deg, var(--navy-3), var(--navy-2) 52%, #091527);
+      min-height:100vh;
+      overflow-x:hidden;
+    }
+    body:before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size:46px 46px;
+      mask-image:linear-gradient(to bottom, rgba(0,0,0,.65), transparent 78%);
+      pointer-events:none;
+      z-index:-2;
+    }
+    body:after{
+      content:"";
+      position:fixed;
+      width:520px;
+      height:520px;
+      right:-180px;
+      top:210px;
+      background:radial-gradient(circle, rgba(255,79,31,.18), transparent 68%);
+      pointer-events:none;
+      z-index:-1;
+    }
+    .shell{
+      width:min(1720px, 96vw);
+      margin:0 auto;
+      padding:28px 0 44px;
+    }
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:22px;
+      position:sticky;
+      top:0;
+      z-index:30;
+      padding:12px 0;
+      backdrop-filter:blur(18px);
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding:10px 14px 10px 12px;
+      border:1px solid rgba(255,255,255,.1);
+      background:rgba(7,17,31,.62);
+      border-radius:999px;
+      box-shadow:var(--shadow-soft);
+      min-width:max-content;
+    }
+    .g-mark{
+      width:36px;
+      height:36px;
+      border-radius:12px;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,.9), transparent 10%),
+        conic-gradient(from 210deg, var(--orange), #ffb08c, var(--orange), #ff6b39, var(--orange));
+      position:relative;
+      box-shadow:0 0 30px rgba(255,79,31,.38);
+    }
+    .g-mark:after{
+      content:"";
+      position:absolute;
+      inset:9px;
+      border:3px solid var(--navy);
+      border-left-color:transparent;
+      border-radius:50%;
+      transform:rotate(-18deg);
+    }
+    .brand strong{
+      display:block;
+      letter-spacing:-.02em;
+      font-size:15px;
+    }
+    .brand span{
+      display:block;
+      color:var(--muted);
+      font-size:11px;
+      margin-top:1px;
+    }
+    .top-actions{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .chip, button.chip{
+      border:1px solid rgba(255,255,255,.11);
+      background:rgba(255,255,255,.06);
+      color:var(--muted);
+      border-radius:999px;
+      padding:10px 13px;
+      font-weight:750;
+      font-size:12px;
+      cursor:pointer;
+      transition:all var(--speed) ease;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+    .chip:hover, button.chip:hover{border-color:rgba(255,79,31,.45); color:#fff; transform:translateY(-1px)}
+    .chip.active{background:rgba(255,79,31,.16); border-color:rgba(255,79,31,.55); color:#fff}
+    .hero{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:20px;
+      margin-bottom:20px;
+    }
+    .hero-card, .guide-card, .control-card, .canvas-card, .panel, .role-card, .public-card, .legend-card{
+      background:linear-gradient(180deg, rgba(20,42,71,.88), rgba(10,21,38,.82));
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(18px);
+    }
+    .hero-card{
+      padding:32px;
+      overflow:hidden;
+      position:relative;
+      min-height:320px;
+    }
+    .hero-card:before{
+      content:"";
+      position:absolute;
+      width:700px;
+      height:240px;
+      left:-140px;
+      top:-110px;
+      background:linear-gradient(90deg, rgba(255,79,31,.32), rgba(102,215,255,.1), transparent);
+      filter:blur(10px);
+      transform:rotate(-7deg);
+      opacity:.86;
+    }
+    .hero-card:after{
+      content:"";
+      position:absolute;
+      inset:auto -100px -130px auto;
+      width:380px;
+      height:380px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(255,79,31,.22), transparent 68%);
+    }
+    .eyebrow{
+      position:relative;
+      z-index:1;
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      color:#fff;
+      font-size:12px;
+      font-weight:850;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      background:rgba(255,79,31,.14);
+      border:1px solid rgba(255,79,31,.35);
+      border-radius:999px;
+      padding:9px 12px;
+    }
+    .eyebrow:before{
+      content:"";
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:var(--orange);
+      box-shadow:0 0 20px rgba(255,79,31,.9);
+    }
+    h1{
+      position:relative;
+      z-index:1;
+      margin:18px 0 0;
+      font-size:clamp(34px, 4.4vw, 68px);
+      line-height:.94;
+      letter-spacing:-.065em;
+      max-width:980px;
+    }
+    .gradient-text{
+      background:linear-gradient(90deg,#fff 0%,#dff6ff 35%,#ffb08c 82%);
+      -webkit-background-clip:text;
+      color:transparent;
+    }
+    .hero-card p{
+      position:relative;
+      z-index:1;
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.55;
+      max-width:900px;
+      margin:18px 0 0;
+    }
+    .hero-actions{
+      position:relative;
+      z-index:1;
+      margin-top:24px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      align-items:center;
+    }
+    .primary-btn, .secondary-btn{
+      border:0;
+      border-radius:999px;
+      padding:14px 18px;
+      font-weight:900;
+      cursor:pointer;
+      transition:all var(--speed) ease;
+      font-size:14px;
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      text-decoration:none;
+    }
+    .primary-btn{
+      background:linear-gradient(135deg, var(--orange), #ff7d45);
+      color:#fff;
+      box-shadow:0 14px 35px rgba(255,79,31,.32);
+    }
+    .primary-btn:hover{transform:translateY(-2px); box-shadow:0 18px 46px rgba(255,79,31,.42)}
+    .secondary-btn{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+      color:#fff;
+    }
+    .secondary-btn:hover{transform:translateY(-2px); border-color:rgba(102,215,255,.36)}
+    .guide-card{
+      padding:24px;
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+      min-height:320px;
+    }
+    .guide-head{
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      align-items:flex-start;
+    }
+    .guide-head h2, .control-card h2, .panel h2, .public-card h2, .legend-card h2{
+      margin:0;
+      font-size:20px;
+      letter-spacing:-.035em;
+    }
+    .guide-head p, .public-card p, .legend-card p{
+      margin:7px 0 0;
+      color:var(--muted);
+      line-height:1.45;
+      font-size:14px;
+    }
+    .pulse-badge{
+      width:66px;
+      height:66px;
+      border-radius:22px;
+      background:rgba(255,79,31,.13);
+      border:1px solid rgba(255,79,31,.34);
+      display:grid;
+      place-items:center;
+      position:relative;
+      flex:0 0 auto;
+    }
+    .pulse-badge:before, .pulse-badge:after{
+      content:"";
+      position:absolute;
+      inset:8px;
+      border-radius:18px;
+      border:1px solid rgba(255,79,31,.38);
+      animation:pulse 2.1s infinite;
+    }
+    .pulse-badge:after{animation-delay:.7s}
+    .pulse-badge span{font-size:26px; z-index:1}
+    @keyframes pulse{
+      0%{transform:scale(.84); opacity:.8}
+      70%{transform:scale(1.24); opacity:0}
+      100%{transform:scale(1.24); opacity:0}
+    }
+    .howto{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:10px;
+    }
+    .how-step{
+      display:grid;
+      grid-template-columns:34px 1fr;
+      gap:11px;
+      align-items:start;
+      padding:12px;
+      border-radius:16px;
+      background:rgba(255,255,255,.055);
+      border:1px solid rgba(255,255,255,.085);
+    }
+    .how-step b{
+      width:34px;
+      height:34px;
+      border-radius:12px;
+      background:rgba(255,79,31,.18);
+      border:1px solid rgba(255,79,31,.34);
+      display:grid;
+      place-items:center;
+      color:#fff;
+    }
+    .how-step strong{display:block; font-size:14px; margin-bottom:3px}
+    .how-step span{display:block; color:var(--muted); font-size:13px; line-height:1.35}
+    .metrics-strip{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+      margin-bottom:20px;
+    }
+    .metric{
+      padding:15px;
+      border-radius:20px;
+      background:rgba(255,255,255,.055);
+      border:1px solid rgba(255,255,255,.09);
+      min-height:96px;
+      position:relative;
+      overflow:hidden;
+    }
+    .metric:after{
+      content:"";
+      position:absolute;
+      inset:auto -60px -60px auto;
+      width:120px;
+      height:120px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(255,79,31,.16), transparent 70%);
+    }
+    .metric small{color:var(--soft); font-weight:850; letter-spacing:.08em; text-transform:uppercase; font-size:10px}
+    .metric strong{display:block; font-size:25px; letter-spacing:-.05em; margin-top:7px}
+    .metric span{display:block; color:var(--muted); font-size:12px; line-height:1.3; margin-top:5px}
+    .demo-grid{
+      display:grid;
+      grid-template-columns:320px 1fr 360px;
+      gap:18px;
+      align-items:start;
+    }
+    .control-card{
+      padding:18px;
+      position:sticky;
+      top:88px;
+      z-index:10;
+    }
+    .control-card p{
+      color:var(--muted);
+      line-height:1.45;
+      font-size:13px;
+      margin:7px 0 15px;
+    }
+    .scenario-list{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      max-height:min(620px, 48vh);
+      overflow:auto;
+      padding-right:4px;
+      scrollbar-width:thin;
+      scrollbar-color:rgba(255,79,31,.75) rgba(255,255,255,.08);
+    }
+    .scenario-list::-webkit-scrollbar{width:8px}
+    .scenario-list::-webkit-scrollbar-track{background:rgba(255,255,255,.06); border-radius:999px}
+    .scenario-list::-webkit-scrollbar-thumb{background:linear-gradient(var(--orange), var(--orange-2)); border-radius:999px}
+    .control-card{max-height:calc(100vh - 105px); overflow:auto; scrollbar-width:thin;}
+    .scenario{
+      border:1px solid rgba(255,255,255,.09);
+      background:rgba(255,255,255,.055);
+      border-radius:18px;
+      color:#fff;
+      text-align:left;
+      padding:13px;
+      cursor:pointer;
+      transition:all var(--speed) ease;
+      position:relative;
+      overflow:hidden;
+    }
+    .scenario:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(90deg, rgba(255,79,31,.16), transparent 55%);
+      opacity:0;
+      transition:opacity var(--speed) ease;
+    }
+    .scenario:hover{transform:translateY(-2px); border-color:rgba(255,79,31,.35)}
+    .scenario.active{border-color:rgba(255,79,31,.72); background:rgba(255,79,31,.1)}
+    .scenario.active:before{opacity:1}
+    .scenario strong{display:flex; align-items:center; gap:8px; font-size:14px; position:relative; z-index:1}
+    .scenario span{display:block; color:var(--muted); font-size:12px; line-height:1.35; margin-top:5px; position:relative; z-index:1}
+    .scenario .tag{display:inline-flex; color:#fff; font-size:10px; padding:4px 8px; background:rgba(102,215,255,.13); border:1px solid rgba(102,215,255,.25); border-radius:999px; margin-top:9px; position:relative; z-index:1}
+    .section-label{
+      margin:18px 0 10px;
+      color:var(--soft);
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+    .speed-options, .language-options{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+    .mini-btn{
+      border:1px solid rgba(255,255,255,.1);
+      background:rgba(255,255,255,.06);
+      color:var(--muted);
+      border-radius:999px;
+      padding:8px 10px;
+      font-size:11px;
+      font-weight:850;
+      cursor:pointer;
+      transition:all var(--speed) ease;
+    }
+    .mini-btn.active, .mini-btn:hover{background:rgba(255,79,31,.15); border-color:rgba(255,79,31,.43); color:#fff}
+    .legend-mini{
+      display:grid;
+      gap:9px;
+      margin-top:13px;
+    }
+    .legend-row{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:var(--muted);
+      font-size:12px;
+    }
+    .dot{
+      width:11px;
+      height:11px;
+      border-radius:999px;
+      background:var(--sky);
+      box-shadow:0 0 16px rgba(102,215,255,.4);
+    }
+    .dot.orange{background:var(--orange); box-shadow:0 0 16px rgba(255,79,31,.48)}
+    .dot.green{background:var(--mint); box-shadow:0 0 16px rgba(107,231,180,.42)}
+    .dot.violet{background:var(--violet); box-shadow:0 0 16px rgba(185,161,255,.42)}
+    .canvas-card{
+      min-height:850px;
+      padding:18px;
+      position:relative;
+      overflow:hidden;
+    }
+    .canvas-header{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:14px;
+      position:relative;
+      z-index:4;
+    }
+    .canvas-header h2{margin:0; font-size:23px; letter-spacing:-.04em}
+    .canvas-header p{margin:6px 0 0; color:var(--muted); font-size:13px; line-height:1.4}
+    .state-pill{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      border-radius:999px;
+      background:rgba(255,79,31,.11);
+      border:1px solid rgba(255,79,31,.32);
+      padding:9px 12px;
+      font-size:12px;
+      font-weight:850;
+      color:#fff;
+      min-width:max-content;
+    }
+    .state-pill:before{
+      content:"";
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--orange);
+      box-shadow:0 0 16px rgba(255,79,31,.9);
+      animation:blink 1.2s infinite;
+    }
+    @keyframes blink{0%,100%{opacity:.42}50%{opacity:1}}
+    .diagram-wrap{
+      position:relative;
+      height:760px;
+      border-radius:22px;
+      background:
+        radial-gradient(circle at 50% 42%, rgba(255,79,31,.14), transparent 34%),
+        radial-gradient(circle at 14% 60%, rgba(102,215,255,.1), transparent 28%),
+        rgba(0,0,0,.12);
+      border:1px solid rgba(255,255,255,.075);
+      overflow:hidden;
+    }
+    .lane-title{
+      position:absolute;
+      z-index:3;
+      color:#fff;
+      font-size:12px;
+      font-weight:950;
+      letter-spacing:.13em;
+      text-transform:uppercase;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      opacity:.9;
+    }
+    .lane-title:before{content:""; width:9px; height:9px; border-radius:999px; background:var(--orange); box-shadow:0 0 18px rgba(255,79,31,.8)}
+    .lane-customer{left:20px; top:18px}
+    .lane-genesys{left:330px; top:18px}
+    .lane-agent{right:210px; top:18px}
+    .lane-supervisor{right:30px; top:18px}
+    .lane-external{left:20px; bottom:18px}
+    .layer-zone{
+      position:absolute;
+      border:1px dashed rgba(255,255,255,.09);
+      border-radius:24px;
+      background:rgba(255,255,255,.025);
+      pointer-events:none;
+    }
+    .zone-customer{left:12px; top:48px; width:250px; height:454px}
+    .zone-genesys{left:284px; top:48px; right:278px; height:454px; border-color:rgba(255,79,31,.18); background:rgba(255,79,31,.03)}
+    .zone-agent{right:114px; top:48px; width:150px; height:454px}
+    .zone-supervisor{right:12px; top:48px; width:92px; height:454px}
+    .zone-external{left:12px; right:12px; bottom:48px; height:166px}
+    svg.connections{
+      position:absolute;
+      inset:0;
+      z-index:1;
+      width:100%;
+      height:100%;
+      pointer-events:none;
+    }
+    .conn{
+      fill:none;
+      stroke:rgba(126,140,168,.32);
+      stroke-width:2;
+      stroke-linecap:round;
+      stroke-dasharray:8 10;
+      transition:all .35s ease;
+    }
+    .conn.base{stroke:rgba(126,140,168,.22); stroke-dasharray:0; stroke-width:1.4}
+    .conn.active{
+      stroke:var(--orange);
+      stroke-width:3.4;
+      stroke-dasharray:10 8;
+      filter:drop-shadow(0 0 8px rgba(255,79,31,.72));
+      animation:dash 1.15s linear infinite;
+    }
+    .conn.data.active{stroke:var(--sky); filter:drop-shadow(0 0 8px rgba(102,215,255,.72))}
+    .conn.agent.active{stroke:var(--mint); filter:drop-shadow(0 0 8px rgba(107,231,180,.64))}
+    .conn.supervisor.active{stroke:var(--violet); filter:drop-shadow(0 0 8px rgba(185,161,255,.66))}
+    @keyframes dash{to{stroke-dashoffset:-36}}
+    .particle{
+      offset-rotate:auto;
+      position:absolute;
+      width:12px;
+      height:12px;
+      border-radius:50%;
+      z-index:2;
+      pointer-events:none;
+      opacity:0;
+      background:var(--orange);
+      box-shadow:0 0 18px rgba(255,79,31,.9);
+    }
+    .particle.run{
+      opacity:1;
+      animation:moveParticle 1.7s ease-in-out forwards;
+    }
+    @keyframes moveParticle{
+      0%{offset-distance:0%; transform:scale(.8)}
+      35%{opacity:1}
+      100%{offset-distance:100%; transform:scale(1.08); opacity:0}
+    }
+    .node{
+      position:absolute;
+      z-index:5;
+      min-width:120px;
+      max-width:190px;
+      padding:12px;
+      border-radius:18px;
+      background:linear-gradient(180deg, rgba(22,43,69,.98), rgba(12,25,43,.98));
+      border:1px solid rgba(255,255,255,.1);
+      box-shadow:0 14px 36px rgba(0,0,0,.28);
+      cursor:pointer;
+      transition:all var(--speed) ease;
+    }
+    .node:hover{transform:translateY(-3px); border-color:rgba(102,215,255,.35)}
+    .node.active{
+      transform:translateY(-4px) scale(1.025);
+      border-color:rgba(255,79,31,.9);
+      box-shadow:0 18px 42px rgba(255,79,31,.18), 0 0 0 1px rgba(255,79,31,.26) inset;
+    }
+    .node.current{
+      animation:nodePulse 1.2s infinite;
+    }
+    @keyframes nodePulse{
+      0%,100%{box-shadow:0 18px 42px rgba(255,79,31,.16), 0 0 0 1px rgba(255,79,31,.25) inset}
+      50%{box-shadow:0 24px 62px rgba(255,79,31,.32), 0 0 0 3px rgba(255,79,31,.2) inset}
+    }
+    .node.customer{border-color:rgba(102,215,255,.18)}
+    .node.customer.active{border-color:rgba(102,215,255,.9); box-shadow:0 18px 42px rgba(102,215,255,.14), 0 0 0 1px rgba(102,215,255,.22) inset}
+    .node.agent-node{border-color:rgba(107,231,180,.18)}
+    .node.agent-node.active{border-color:rgba(107,231,180,.88); box-shadow:0 18px 42px rgba(107,231,180,.12), 0 0 0 1px rgba(107,231,180,.22) inset}
+    .node.supervisor-node{border-color:rgba(185,161,255,.2)}
+    .node.supervisor-node.active{border-color:rgba(185,161,255,.9); box-shadow:0 18px 42px rgba(185,161,255,.12), 0 0 0 1px rgba(185,161,255,.22) inset}
+    .node.external{border-color:rgba(255,209,102,.18)}
+    .node.external.active{border-color:rgba(255,209,102,.86); box-shadow:0 18px 42px rgba(255,209,102,.11), 0 0 0 1px rgba(255,209,102,.2) inset}
+    .node .icon{
+      width:34px;
+      height:34px;
+      border-radius:13px;
+      display:grid;
+      place-items:center;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.09);
+      margin-bottom:9px;
+      font-size:18px;
+    }
+    .node strong{
+      display:block;
+      font-size:13px;
+      line-height:1.12;
+      letter-spacing:-.018em;
+    }
+    .node small{
+      display:block;
+      color:var(--muted);
+      line-height:1.28;
+      font-size:11px;
+      margin-top:5px;
+    }
+    .node .status{
+      margin-top:9px;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      border-radius:999px;
+      padding:5px 8px;
+      background:rgba(255,255,255,.055);
+      color:var(--soft);
+      font-size:10px;
+      font-weight:850;
+    }
+    .node .status:before{
+      content:"";
+      width:6px;
+      height:6px;
+      border-radius:999px;
+      background:var(--soft);
+    }
+    .node.active .status{color:#fff; background:rgba(255,79,31,.14)}
+    .node.active .status:before{background:var(--orange); box-shadow:0 0 10px rgba(255,79,31,.85)}
+    .customer.active .status:before{background:var(--sky); box-shadow:0 0 10px rgba(102,215,255,.85)}
+    .agent-node.active .status:before{background:var(--mint); box-shadow:0 0 10px rgba(107,231,180,.85)}
+    .supervisor-node.active .status:before{background:var(--violet); box-shadow:0 0 10px rgba(185,161,255,.85)}
+    .external.active .status:before{background:var(--yellow); box-shadow:0 0 10px rgba(255,209,102,.85)}
+    #n-web{left:34px; top:82px}
+    #n-voice{left:34px; top:230px}
+    #n-id{left:34px; top:378px}
+    #n-entry{left:305px; top:80px}
+    #n-bot{left:520px; top:80px}
+    #n-context{left:735px; top:80px}
+    #n-architect{left:305px; top:246px}
+    #n-data{left:520px; top:246px}
+    #n-routing{left:735px; top:246px}
+    #n-knowledge{left:305px; top:402px}
+    #n-ai{left:520px; top:402px}
+    #n-queue{left:735px; top:402px}
+    #n-workspace{right:128px; top:82px}
+    #n-copilot{right:128px; top:230px}
+    #n-wrap{right:128px; top:378px}
+    #n-realtime{right:24px; top:82px; min-width:74px; max-width:82px; padding:10px 8px}
+    #n-quality{right:24px; top:230px; min-width:74px; max-width:82px; padding:10px 8px}
+    #n-wem{right:24px; top:378px; min-width:74px; max-width:82px; padding:10px 8px}
+    #n-crm{left:48px; bottom:78px}
+    #n-core{left:256px; bottom:78px}
+    #n-pay{left:464px; bottom:78px}
+    #n-notify{left:672px; bottom:78px}
+    #n-survey{left:880px; bottom:78px}
+    .node.slim strong{font-size:11px}
+    .node.slim small{display:none}
+    .action-ribbon{
+      position:absolute;
+      z-index:7;
+      left:22px;
+      right:22px;
+      bottom:224px;
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:10px;
+      pointer-events:none;
+    }
+    .action-token{
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.09);
+      background:rgba(7,17,31,.7);
+      padding:10px;
+      opacity:.36;
+      transition:all .35s ease;
+      min-height:62px;
+    }
+    .action-token.active{
+      opacity:1;
+      background:rgba(255,79,31,.1);
+      border-color:rgba(255,79,31,.4);
+      transform:translateY(-3px);
+    }
+    .action-token b{display:block; font-size:12px; margin-bottom:4px}
+    .action-token span{display:block; color:var(--muted); font-size:11px; line-height:1.25}
+    .side-panel{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+      position:sticky;
+      top:88px;
+    }
+    .panel{
+      padding:18px;
+    }
+    .panel p{color:var(--muted); line-height:1.45; font-size:13px; margin:7px 0 0}
+    .story-now{
+      border-radius:18px;
+      margin-top:13px;
+      padding:15px;
+      background:rgba(255,255,255,.055);
+      border:1px solid rgba(255,255,255,.09);
+    }
+    .story-now .kicker{
+      color:var(--orange-2);
+      font-size:11px;
+      font-weight:950;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      margin-bottom:7px;
+    }
+    .story-now h3{font-size:18px; letter-spacing:-.035em; margin:0}
+    .story-now p{font-size:14px; color:var(--muted); margin:9px 0 0; line-height:1.48}
+    .story-actions{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:9px;
+      margin-top:13px;
+    }
+    .story-actions button{
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.1);
+      background:rgba(255,255,255,.06);
+      color:#fff;
+      padding:11px;
+      cursor:pointer;
+      font-weight:850;
+      transition:all .25s ease;
+    }
+    .story-actions button:hover{border-color:rgba(255,79,31,.42); transform:translateY(-1px)}
+    .stepper{
+      display:flex;
+      flex-direction:column;
+      gap:9px;
+      margin-top:13px;
+    }
+    .step-line{
+      display:grid;
+      grid-template-columns:32px 1fr;
+      gap:10px;
+      align-items:start;
+      padding:10px;
+      border-radius:15px;
+      background:rgba(255,255,255,.045);
+      border:1px solid rgba(255,255,255,.07);
+      opacity:.48;
+      transition:all .28s ease;
+    }
+    .step-line.active{opacity:1; background:rgba(255,79,31,.09); border-color:rgba(255,79,31,.32)}
+    .step-line.done{opacity:.92}
+    .step-num{
+      width:32px;
+      height:32px;
+      display:grid;
+      place-items:center;
+      border-radius:12px;
+      background:rgba(255,255,255,.065);
+      color:var(--muted);
+      font-weight:950;
+      font-size:12px;
+    }
+    .step-line.active .step-num{background:rgba(255,79,31,.19); color:#fff}
+    .step-line strong{display:block; font-size:13px}
+    .step-line span{display:block; color:var(--muted); font-size:12px; line-height:1.32; margin-top:3px}
+    .detail-grid{
+      display:grid;
+      gap:10px;
+      margin-top:13px;
+    }
+    .detail-item{
+      border-radius:15px;
+      padding:11px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.045);
+    }
+    .detail-item b{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      color:#fff;
+      font-size:12px;
+      margin-bottom:4px;
+    }
+    .detail-item p{margin:0; font-size:12px; color:var(--muted); line-height:1.35}
+    .workspace-preview{
+      margin-top:13px;
+      border-radius:19px;
+      border:1px solid rgba(255,255,255,.1);
+      background:#f7f9fc;
+      color:#102139;
+      overflow:hidden;
+      box-shadow:0 18px 55px rgba(0,0,0,.22);
+    }
+    .workspace-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:11px 12px;
+      background:#fff;
+      border-bottom:1px solid #e6ebf2;
+    }
+    .workspace-top b{font-size:12px}
+    .workspace-top span{font-size:10px; color:#6b778c; font-weight:800}
+    .workspace-body{padding:12px; display:grid; gap:9px}
+    .customer-card-light{
+      display:grid;
+      grid-template-columns:42px 1fr;
+      gap:10px;
+      align-items:center;
+      padding:10px;
+      border-radius:14px;
+      background:#eef3fa;
+    }
+    .avatar{
+      width:42px;
+      height:42px;
+      border-radius:15px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg, var(--orange), #ff996d);
+      color:#fff;
+      font-weight:950;
+    }
+    .customer-card-light strong{font-size:13px; display:block}
+    .customer-card-light small{font-size:11px; color:#607086}
+    .suggestion{
+      padding:10px;
+      border-radius:14px;
+      background:#fff;
+      border:1px solid #e4e9f1;
+    }
+    .suggestion b{display:flex; justify-content:space-between; font-size:12px; align-items:center}
+    .suggestion b span{font-size:10px; color:#1c8a5b; background:#daf8eb; padding:4px 7px; border-radius:999px}
+    .suggestion p{font-size:11px; line-height:1.35; color:#56657b; margin:6px 0 0}
+    .mini-bars{display:grid; gap:6px; margin-top:8px}
+    .bar{height:7px; border-radius:999px; background:#e7edf5; overflow:hidden}
+    .bar i{display:block; height:100%; width:60%; background:linear-gradient(90deg, var(--orange), #ff9c72); border-radius:999px; transition:width .5s ease}
+    .bar:nth-child(2) i{width:42%; background:linear-gradient(90deg, #66d7ff, #a4ecff)}
+    .bar:nth-child(3) i{width:72%; background:linear-gradient(90deg, #6be7b4, #a5f3d1)}
+
+    .agent-desk-section{
+      margin-top:22px;
+      padding:24px;
+      border-radius:30px;
+      border:1px solid rgba(255,255,255,.10);
+      background:linear-gradient(180deg, rgba(16,33,57,.92), rgba(7,17,31,.94));
+      box-shadow:var(--shadow-soft);
+      overflow:hidden;
+      position:relative;
+    }
+    .agent-desk-section:before{
+      content:"";
+      position:absolute;
+      inset:-160px -120px auto auto;
+      width:420px;
+      height:420px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(255,69,26,.18), transparent 64%);
+      pointer-events:none;
+    }
+    .agent-desk-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:20px;
+      position:relative;
+      z-index:1;
+      margin-bottom:16px;
+    }
+    .agent-desk-head h2{
+      margin:0 0 7px;
+      font-size:24px;
+      letter-spacing:-.04em;
+      color:#fff;
+    }
+    .agent-desk-head p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.5;
+      max-width:850px;
+    }
+    .desk-status{
+      flex:0 0 auto;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      padding:9px 12px;
+      border-radius:999px;
+      background:rgba(255,69,26,.10);
+      border:1px solid rgba(255,69,26,.30);
+      color:#fff;
+      font-weight:900;
+      font-size:12px;
+      white-space:nowrap;
+    }
+    .desk-status:before{
+      content:"";
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--orange);
+      box-shadow:0 0 14px rgba(255,69,26,.8);
+    }
+    .workspace-shell{
+      position:relative;
+      z-index:1;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,.14);
+      background:#f5f7fb;
+      color:#142033;
+      overflow:hidden;
+      box-shadow:0 26px 80px rgba(0,0,0,.35);
+    }
+    .gc-topbar{
+      height:42px;
+      background:#fff;
+      border-bottom:1px solid #d9e0ea;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:0 12px;
+      font-size:11px;
+      color:#4b596d;
+    }
+    .gc-dot-logo{
+      width:16px;
+      height:22px;
+      display:grid;
+      gap:3px;
+      align-content:center;
+    }
+    .gc-dot-logo span{display:block; width:7px; height:7px; border-radius:50%; background:#ff451a; margin-left:2px}
+    .gc-dot-logo span:nth-child(2){width:14px; height:7px; border-radius:999px; margin-left:0}
+    .gc-search{
+      height:24px;
+      min-width:230px;
+      border:1px solid #c6cfdb;
+      border-radius:3px;
+      display:flex;
+      align-items:center;
+      padding:0 9px;
+      color:#7a8798;
+      background:#f9fbfe;
+    }
+    .gc-tabs{margin-left:auto; display:flex; align-items:center; gap:7px; font-weight:800; color:#33507a}
+    .gc-tab{padding:6px 9px; border-radius:4px; background:#eef3ff; border:1px solid #d6e2ff}
+    .gc-tab.live{background:#e8fff3; color:#0e7a4d; border-color:#b6edce}
+    .workspace-scroll{overflow-x:auto; scrollbar-color:#c5cfdd #eef2f7; scrollbar-width:thin}
+    .agent-desktop{
+      min-width:1480px;
+      height:640px;
+      display:grid;
+      grid-template-columns:190px 330px 360px 260px 220px 270px 210px;
+      background:#f4f7fb;
+    }
+    .desk-pane{
+      border-right:1px solid #dce3ee;
+      background:#fff;
+      min-width:0;
+      display:flex;
+      flex-direction:column;
+    }
+    .desk-pane:nth-child(2n){background:#fbfcff}
+    .pane-title{
+      height:34px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 10px;
+      border-bottom:1px solid #e1e7f0;
+      font-size:11px;
+      font-weight:900;
+      color:#23344f;
+    }
+    .pane-title span{font-size:10px; color:#77849a; font-weight:800}
+    .conversation-list{padding:10px; display:grid; gap:8px}
+    .conv-card{
+      border:1px solid #d6e2ff;
+      background:#eff5ff;
+      border-left:3px solid #2b6fe8;
+      border-radius:8px;
+      padding:10px;
+      display:grid;
+      gap:5px;
+    }
+    .conv-card strong{font-size:12px; color:#15243a}
+    .conv-card small{font-size:11px; color:#66758c}
+    .conv-card .time{font-size:10px; color:#2b6fe8; font-weight:900; justify-self:end}
+    .chat-body{padding:16px; display:flex; flex-direction:column; gap:12px; height:100%}
+    .chat-contact{display:flex; align-items:center; gap:8px; font-size:12px; font-weight:900; color:#15243a}
+    .chat-avatar{width:26px; height:26px; border-radius:50%; background:#173153; color:#fff; display:grid; place-items:center; font-size:10px}
+    .chat-bubble{max-width:220px; background:#e7f5ff; border-radius:13px 13px 13px 4px; padding:10px 12px; font-size:13px; line-height:1.35; color:#17243a}
+    .chat-bubble.agent{align-self:flex-end; background:#fff3eb; border-radius:13px 13px 4px 13px; border:1px solid #ffd0bd}
+    .chat-time{font-size:10px; color:#8a96a8; margin-top:-7px}
+    .chat-compose{margin-top:auto; min-height:72px; border:1px solid #c8d2df; border-radius:4px; background:#fff; padding:9px; font-size:12px; color:#6b778c; display:flex; align-items:flex-start}
+    .script-pane{padding:16px; overflow:auto}
+    .script-card{
+      border:1px solid #e0e6ef;
+      border-radius:12px;
+      background:#fff;
+      box-shadow:0 10px 24px rgba(18,32,55,.07);
+      overflow:hidden;
+    }
+    .script-hero{
+      padding:18px 18px 14px;
+      border-bottom:3px solid #172b4d;
+      text-align:center;
+    }
+    .script-hero .mini-brand{font-size:12px; font-weight:950; color:#ff451a; letter-spacing:-.03em; margin-bottom:4px}
+    .script-hero h3{font-size:25px; line-height:1.05; margin:0; letter-spacing:-.05em; color:#0f172a}
+    .script-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px; padding:16px}
+    .script-block h4{font-size:12px; margin:0 0 9px; color:#0f172a; border-bottom:1px solid #d9e1ec; padding-bottom:6px}
+    .field-row{display:grid; grid-template-columns:82px 1fr; gap:8px; margin-bottom:7px; font-size:11px; align-items:center}
+    .field-row b{color:#4b596d}
+    .field-row span{color:#111827; font-weight:800}
+    .field-row .red{background:#ff5a5f; color:#fff; padding:4px 6px; border-radius:3px}
+    .field-row .green{background:#76d353; color:#12250d; padding:4px 6px; border-radius:3px}
+    .tool-stack{display:grid; gap:7px}
+    .tool-pill{padding:9px; background:#edf3f7; border-radius:4px; font-size:11px; font-weight:800; color:#27364f; border:1px solid #dbe4ee}
+    .main-action{margin-top:8px; border:0; border-radius:5px; background:#114f98; color:#fff; padding:9px; font-size:11px; font-weight:900; width:100%}
+    .copilot-box{margin:10px; border:1px solid #d7e0eb; border-radius:7px; background:#fff; overflow:hidden}
+    .copilot-head{padding:9px 10px; border-bottom:1px solid #e2e8f0; display:flex; align-items:center; gap:6px; font-size:11px; font-weight:950; color:#263853}
+    .ai-chip{font-size:9px; border:1px solid #ffd0bd; background:#fff2ea; color:#bd3d18; border-radius:999px; padding:3px 6px; margin-left:auto}
+    .copilot-content{padding:11px; display:grid; gap:9px}
+    .copilot-card{border:1px solid #e3e8f0; background:#f8fafc; border-radius:7px; padding:9px}
+    .copilot-card b{font-size:11px; color:#111827; display:block; margin-bottom:5px}
+    .copilot-card p{font-size:11px; color:#56657b; line-height:1.4; margin:0}
+    .profile-body{padding:12px; display:grid; gap:10px; overflow:auto}
+    .profile-name{display:flex; gap:9px; align-items:center; border-bottom:1px solid #e5ebf3; padding-bottom:10px}
+    .profile-name .avatar-mini{width:34px; height:34px; border-radius:50%; background:#eaf2ff; display:grid; place-items:center; color:#245aa8; font-weight:950}
+    .profile-name b{font-size:13px; display:block}
+    .profile-name small{font-size:10px; color:#68768a}
+    .profile-detail{border:1px solid #e5ebf3; border-radius:8px; padding:9px; background:#fff}
+    .profile-detail strong{font-size:10px; color:#5d6b80; display:block; margin-bottom:4px}
+    .profile-detail span{font-size:11px; font-weight:850; color:#142033}
+    .journey-list{padding:10px; display:grid; gap:8px; overflow:auto}
+    .journey-item{display:grid; grid-template-columns:42px 1fr; gap:8px; padding:8px; border-bottom:1px solid #e6ecf3; font-size:11px}
+    .journey-item time{font-weight:950; color:#69778e}
+    .journey-item b{display:block; color:#102139; font-size:11px}
+    .journey-item span{display:block; color:#67758c; margin-top:2px}
+    .responses{padding:10px; display:grid; gap:8px}
+    .response-btn{border:1px solid #dbe4ee; background:#fff; border-radius:7px; padding:10px; text-align:left; font-size:11px; color:#27364f; font-weight:850}
+    .response-btn:before{content:"↪"; color:#2b6fe8; margin-right:5px}
+    .supervisor-ribbon{
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      gap:10px;
+      padding:12px;
+      background:#eef3fa;
+      border-top:1px solid #dce3ee;
+    }
+    .ribbon-metric{background:#fff; border:1px solid #dce3ee; border-radius:10px; padding:9px}
+    .ribbon-metric b{display:block; color:#0f172a; font-size:16px; line-height:1}
+    .ribbon-metric span{display:block; color:#657387; font-size:10px; font-weight:850; margin-top:4px}
+    .workspace-shell.escalated .pane-title{background:#f8fbff}
+    .workspace-shell.escalated .copilot-box{box-shadow:0 0 0 2px rgba(255,69,26,.12), 0 12px 30px rgba(255,69,26,.08)}
+    .workspace-shell.escalated .conv-card{border-left-color:#ff451a; background:#fff3ed}
+    .workspace-shell.escalated .desk-status-inline{color:#0e7a4d}
+    .desk-status-inline{font-size:10px; color:#6f7d92; font-weight:950}
+    @media(max-width:900px){
+      .agent-desk-head{display:block}
+      .desk-status{display:inline-flex; margin-top:12px}
+      .agent-desk-section{padding:16px; border-radius:22px}
+      .agent-desktop{min-width:1280px; height:600px; grid-template-columns:170px 280px 320px 240px 210px 240px 190px}
+    }
+
+    .public-section{
+      margin-top:20px;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:18px;
+    }
+    .public-card, .legend-card{padding:22px}
+    .compare{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:16px;
+    }
+    .compare-box{
+      border-radius:18px;
+      padding:15px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.045);
+    }
+    .compare-box.bad{border-color:rgba(255,97,121,.25); background:rgba(255,97,121,.055)}
+    .compare-box.good{border-color:rgba(107,231,180,.25); background:rgba(107,231,180,.055)}
+    .compare-box h3{font-size:15px; margin:0 0 9px; letter-spacing:-.02em}
+    .compare-box ul{margin:0; padding-left:17px; color:var(--muted); font-size:13px; line-height:1.55}
+    .role-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      margin-top:16px;
+    }
+    .role-card{
+      padding:16px;
+      box-shadow:none;
+      border-radius:18px;
+      background:rgba(255,255,255,.045);
+    }
+    .role-card .role-icon{
+      width:42px;
+      height:42px;
+      border-radius:15px;
+      display:grid;
+      place-items:center;
+      font-size:21px;
+      background:rgba(255,79,31,.13);
+      border:1px solid rgba(255,79,31,.25);
+      margin-bottom:10px;
+    }
+    .role-card h3{margin:0 0 7px; font-size:15px}
+    .role-card p{font-size:13px; margin:0; color:var(--muted); line-height:1.45}
+    .footer-note{
+      color:var(--soft);
+      font-size:12px;
+      line-height:1.45;
+      margin-top:18px;
+      padding:14px 0 0;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+    .toast{
+      position:fixed;
+      left:50%;
+      bottom:22px;
+      transform:translateX(-50%) translateY(20px);
+      z-index:80;
+      background:rgba(7,17,31,.94);
+      color:#fff;
+      border:1px solid rgba(255,79,31,.42);
+      border-radius:999px;
+      padding:12px 16px;
+      box-shadow:var(--shadow);
+      opacity:0;
+      pointer-events:none;
+      transition:all .35s ease;
+      font-size:13px;
+      font-weight:800;
+    }
+    .toast.show{opacity:1; transform:translateX(-50%) translateY(0)}
+    @media (max-width:1450px){
+      .demo-grid{grid-template-columns:300px 1fr;}
+      .side-panel{grid-column:1 / -1; position:relative; top:auto; display:grid; grid-template-columns:1fr 1fr 1fr}
+      .canvas-card{min-height:820px}
+      .diagram-wrap{height:730px}
+      #n-web{left:28px} #n-voice{left:28px} #n-id{left:28px}
+      #n-entry{left:250px} #n-architect{left:250px} #n-knowledge{left:250px}
+      #n-bot{left:440px} #n-data{left:440px} #n-ai{left:440px}
+      #n-context{left:630px} #n-routing{left:630px} #n-queue{left:630px}
+      #n-workspace{right:122px} #n-copilot{right:122px} #n-wrap{right:122px}
+      #n-realtime{right:24px} #n-quality{right:24px} #n-wem{right:24px}
+      #n-survey{left:780px}
+      .zone-genesys{left:234px; right:274px}
+    }
+    @media (max-width:1100px){
+      .hero, .public-section, .metrics-strip{grid-template-columns:1fr}
+      .demo-grid{grid-template-columns:1fr}
+      .control-card, .side-panel{position:relative; top:auto}
+      .side-panel{display:grid; grid-template-columns:1fr}
+      .diagram-wrap{height:auto; padding:58px 14px 190px; display:grid; grid-template-columns:1fr; gap:12px}
+      .layer-zone, svg.connections, .lane-title, .particle, .action-ribbon{display:none}
+      .node{position:relative!important; left:auto!important; right:auto!important; top:auto!important; bottom:auto!important; max-width:none; width:100%; min-width:0}
+      .node.active{transform:scale(1.01)}
+      .canvas-card{min-height:0}
+      .role-grid, .compare{grid-template-columns:1fr}
+      .topbar{position:relative; flex-direction:column; align-items:stretch}
+      .top-actions{justify-content:flex-start}
+    }
+    @media (max-width:720px){
+      .shell{width:min(100% - 24px, 1720px); padding-top:14px}
+      .hero-card, .guide-card, .control-card, .canvas-card, .panel, .public-card, .legend-card{border-radius:20px}
+      .hero-card{padding:24px}
+      .metrics-strip{gap:10px}
+      .story-actions{grid-template-columns:1fr}
+      h1{font-size:38px}
+      .hero-card p{font-size:16px}
+      .canvas-header{flex-direction:column}
+    }
+
+
+    /* Refinamiento visual: identidad Genesys + Roboto + layout distribuido */
+    .brand{
+      background:rgba(255,255,255,.96);
+      border:1px solid rgba(255,255,255,.42);
+      color:#07111F;
+      padding:8px 14px 8px 12px;
+      gap:14px;
+    }
+    .brand-logo{
+      display:block;
+      width:148px;
+      height:auto;
+      object-fit:contain;
+    }
+    .brand-divider{
+      width:1px;
+      height:30px;
+      background:rgba(7,17,31,.14);
+      display:block;
+    }
+    .brand strong{color:#07111F; font-weight:900; letter-spacing:-.025em;}
+    .brand span{color:#4C5870; font-weight:500;}
+    .chip, button.chip, .scenario, .mini-btn, .state-pill, .primary-btn, .secondary-btn{font-family:"Roboto", sans-serif;}
+    .hero-card h1, h1, h2, h3, .node strong{font-family:"Roboto", sans-serif;}
+    .diagram-logo{
+      position:absolute;
+      z-index:8;
+      right:28px;
+      top:22px;
+      width:150px;
+      height:auto;
+      padding:10px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.96);
+      border:1px solid rgba(255,255,255,.36);
+      box-shadow:0 18px 50px rgba(0,0,0,.24);
+      pointer-events:none;
+    }
+
+    @media (min-width:1101px){
+      .demo-grid{
+        grid-template-columns:1fr;
+        gap:20px;
+      }
+      .control-card{
+        position:relative;
+        top:auto;
+        display:grid;
+        grid-template-columns:minmax(240px,.7fr) minmax(0,2fr) minmax(240px,.8fr);
+        gap:16px;
+        align-items:start;
+      }
+      .control-card > h2,
+      .control-card > p{grid-column:1;}
+      .control-card > p{margin-bottom:0;}
+      .scenario-list{
+        grid-column:2;
+        display:grid;
+        grid-template-columns:repeat(5,minmax(150px,1fr));
+        gap:10px;
+      }
+      .control-card .section-label,
+      .control-card .speed-options,
+      .control-card .language-options,
+      .control-card .legend-mini{grid-column:3;}
+      .control-card .section-label{margin-top:0;}
+      .side-panel{
+        position:relative;
+        top:auto;
+        display:grid;
+        grid-template-columns:1.1fr 1fr 1fr;
+        gap:16px;
+      }
+      .canvas-card{
+        min-height:0;
+        padding:20px;
+        overflow-x:auto;
+        overflow-y:hidden;
+        scrollbar-color:rgba(255,69,26,.65) rgba(255,255,255,.08);
+      }
+      .canvas-card::-webkit-scrollbar{height:10px;}
+      .canvas-card::-webkit-scrollbar-track{background:rgba(255,255,255,.08); border-radius:999px;}
+      .canvas-card::-webkit-scrollbar-thumb{background:rgba(255,69,26,.65); border-radius:999px;}
+      .diagram-wrap{
+        width:1500px;
+        max-width:none;
+        min-width:1500px;
+        height:860px;
+        overflow:hidden;
+        background:
+          radial-gradient(circle at 50% 40%, rgba(255,69,26,.12), transparent 32%),
+          radial-gradient(circle at 16% 57%, rgba(102,215,255,.10), transparent 26%),
+          radial-gradient(circle at 78% 44%, rgba(107,231,180,.09), transparent 24%),
+          linear-gradient(180deg, rgba(13,31,54,.98), rgba(5,13,25,.97));
+      }
+      .diagram-wrap:before{
+        content:"";
+        position:absolute;
+        inset:0;
+        background-image:linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+        background-size:42px 42px;
+        opacity:.45;
+        pointer-events:none;
+      }
+      .zone-customer{left:20px; top:72px; width:260px; height:520px;}
+      .zone-genesys{left:295px; top:72px; right:auto; width:730px; height:520px; border-color:rgba(255,69,26,.20); background:rgba(255,69,26,.035);}
+      .zone-agent{left:1040px; right:auto; top:72px; width:250px; height:520px; border-color:rgba(107,231,180,.16);}
+      .zone-supervisor{left:1305px; right:auto; top:72px; width:170px; height:520px; border-color:rgba(185,161,255,.18);}
+      .zone-external{left:20px; right:20px; bottom:24px; height:188px; border-color:rgba(255,209,102,.17);}
+      .lane-customer{left:42px; top:30px;}
+      .lane-genesys{left:322px; top:30px;}
+      .lane-agent{left:1062px; right:auto; top:30px;}
+      .lane-supervisor{left:1322px; right:auto; top:30px;}
+      .lane-external{left:42px; bottom:202px;}
+      .node{
+        width:200px;
+        max-width:200px;
+        min-width:200px;
+        min-height:128px;
+        padding:14px;
+        border-radius:20px;
+      }
+      .node .icon{width:36px; height:36px; border-radius:14px;}
+      .node strong{font-size:14px; font-weight:800;}
+      .node small{font-size:11.5px; line-height:1.32;}
+      #n-web{left:40px; top:112px;}
+      #n-voice{left:40px; top:292px;}
+      #n-id{left:40px; top:472px;}
+      #n-entry{left:320px; top:112px;}
+      #n-bot{left:565px; top:112px;}
+      #n-context{left:810px; top:112px;}
+      #n-architect{left:320px; top:302px;}
+      #n-data{left:565px; top:302px;}
+      #n-routing{left:810px; top:302px;}
+      #n-knowledge{left:320px; top:492px;}
+      #n-ai{left:565px; top:492px;}
+      #n-queue{left:810px; top:492px;}
+      #n-workspace{left:1055px; right:auto; top:112px; width:215px; max-width:215px; min-width:215px;}
+      #n-copilot{left:1055px; right:auto; top:302px; width:215px; max-width:215px; min-width:215px;}
+      #n-wrap{left:1055px; right:auto; top:492px; width:215px; max-width:215px; min-width:215px;}
+      #n-realtime{left:1325px; right:auto; top:112px; width:130px; max-width:130px; min-width:130px; padding:13px 10px;}
+      #n-quality{left:1325px; right:auto; top:302px; width:130px; max-width:130px; min-width:130px; padding:13px 10px;}
+      #n-wem{left:1325px; right:auto; top:492px; width:130px; max-width:130px; min-width:130px; padding:13px 10px;}
+      #n-crm{left:50px; bottom:54px; width:220px; max-width:220px; min-width:220px;}
+      #n-core{left:325px; bottom:54px; width:220px; max-width:220px; min-width:220px;}
+      #n-pay{left:600px; bottom:54px; width:220px; max-width:220px; min-width:220px;}
+      #n-notify{left:875px; bottom:54px; width:220px; max-width:220px; min-width:220px;}
+      #n-survey{left:1150px; bottom:54px; width:220px; max-width:220px; min-width:220px;}
+      .action-ribbon{
+        left:42px;
+        right:42px;
+        bottom:210px;
+        gap:12px;
+      }
+      .action-token{min-height:70px;}
+    }
+
+    @media (max-width:1100px){
+      .brand-logo{width:132px;}
+      .brand-divider{display:none;}
+      .diagram-logo{display:none;}
+      .diagram-wrap{min-width:0; width:100%;}
+    }
+
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand" aria-label="Genesys Cloud demo">
+        <img class="brand-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAu4AAACKCAMAAADCOT+dAAADAFBMVEVHcEwOESEJFSMOESUMEScVERoKEyQKEiUOESQLEikMEiYMEigKEikMEiULEikNDy0MEiYIEyQLEyYLEioLEigIFCYMESgNESgSEhsLEicLEiYLEicIEycMEScKEigOEiAOESQNESQNEiQKEyP/RRwNEiQLEicMEiXrTCkMEiUOESQLEicNESYKEikLESkMEicLEicNEiQLEigOEiEMEScMESYLEikMEiUMEiULEikNEiULEigNESUNESUMEicLEikLEikMEicMEicMEiYLEyYMEiYcFBgMEiYLEicKEigNEiULEigNESQLEigJEygMEiYMEScMEigJEigMEScMESgMESgLEicMESkMEigMEiUMESgLEicLEigLEigOESMMEib+RRsKEyYMEScMESYLEikNESYLEiULEicMEicLEigMEiUMESgMEScMEiYLESkLESn/RRoMEScLEikLEigMEicLEigMEScLESnoTSwLESgMESgMESgLEiYMEicMEScMEiYMEiYKEyYLESkLEicMEikMEiYMESf8Rh39RRz5Rx8MESgMEScMESgMEicMEiUMESrrTCn6Rx35Rx/9Rhz9Rh39Rhr6Rh7bVDD8Rhz8RR7iUS3ySiPjUC/5Rx8MEin8RR38Rh7+RRz8Rh32SCP7Rh7lTy3wSyL6Rx/0SSL/RBz8Rh34RyAMEib+RRvySiP8Rh3+RRz/RBv9Rhv/RBv4SB7eUjD8RR6fbVf6Rx5zT5/6Rx74SB3sTCgA4OD4SBz/PzcLEin/RRsMEikLEioLEycJEykLEigKEikKEisKEygLEygKEyn/RRkMEigLEicJEygNEikJFCYIFCgLEyX/RBwLEiwIEyoMESsMEioIEyv/RBv/RhoKEycJFCcJEycMESoKEyb9RhsHFCcHFSUKEioJEiwKEyoMEiYKFCMKEi3/Qx7/Rhf/RRwIFCULFCkNEykLEC3+RRz/RBkNESkNEScIEywMEiT9RR8KFCf+RRr/QSALEyr9RxgMEij5Rx0IEymUhWncAAAAwHRSTlMAIwVITwQ/K5PLrPD1NqwJ3Qn7yhnJhvACcofU4xs/Bw8VEnKXKHswlEQK9Fq091i7F5sNa4L5HVX7JdE7M6ThfnVNOctwAW73/EntIOiL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" alt="Genesys" />
+        <span class="brand-divider" aria-hidden="true"></span>
+        <div>
+          <strong>Genesys Cloud</strong>
+          <span>AI-Powered Experience Orchestration</span>
+        </div>
+      </div>
+      <nav class="top-actions" aria-label="Navegacion">
+        <a class="chip" href="#demo">Probar demo</a>
+        <a class="chip" href="#explicacion">Cómo leerlo</a>
+        <button class="chip active" id="toggleSimple" type="button">Modo simple</button>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <article class="hero-card">
+        <div class="eyebrow">Demo interactiva pública</div>
+        <h1><span class="gradient-text">Mira cómo Genesys Cloud orquesta una experiencia</span> desde el primer contacto hasta la mejora continua.</h1>
+        <p>
+          Esta página muestra, de forma visual, cómo un cliente se conecta por cualquier canal, cómo Genesys Cloud captura contexto, decide la siguiente mejor acción, habilita al agente y da visibilidad al supervisor.
+        </p>
+        <div class="hero-actions">
+          <button class="primary-btn" id="heroStart" type="button">▶ Iniciar recorrido</button>
+          <button class="secondary-btn" id="heroNext" type="button">Siguiente activación</button>
+        </div>
+      </article>
+
+      <aside class="guide-card">
+        <div class="guide-head">
+          <div>
+            <h2>Cómo probar la página</h2>
+            <p>No necesitas conocer Genesys. Elige un caso y observa qué cajas se activan.</p>
+          </div>
+          <div class="pulse-badge"><span>⚡</span></div>
+        </div>
+        <div class="howto">
+          <div class="how-step"><b>1</b><div><strong>Elige un escenario</strong><span>Elige una industria: seguros, retail, banca, RH, vivienda, logística o cobranza.</span></div></div>
+          <div class="how-step"><b>2</b><div><strong>Presiona iniciar</strong><span>La demo ilumina las conexiones conforme avanza el journey.</span></div></div>
+          <div class="how-step"><b>3</b><div><strong>Haz clic en una caja</strong><span>Verás qué recibe, qué decide y qué activa cada componente.</span></div></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="metrics-strip" aria-label="Indicadores de ejemplo">
+      <div class="metric"><small>Entrada</small><strong id="mEntrada">WhatsApp + Voz</strong><span>Canales conectados a una misma experiencia.</span></div>
+      <div class="metric"><small>Decisión</small><strong id="mDecision">Prioridad alta</strong><span>Reglas, contexto, intención y datos externos.</span></div>
+      <div class="metric"><small>Agente</small><strong id="mAgente">Contexto listo</strong><span>Screen pop, historial y guía de respuesta.</span></div>
+      <div class="metric"><small>Supervisor</small><strong id="mSupervisor">Alerta activa</strong><span>Monitoreo, calidad, coaching y optimización.</span></div>
+    </section>
+
+    <main class="demo-grid" id="demo">
+      <aside class="control-card">
+        <h2>Escenarios</h2>
+        <p>Selecciona una situación. La arquitectura se activa como si estuviera procesando el caso en vivo.</p>
+        <div class="scenario-list" id="scenarioList"></div>
+
+        <div class="section-label">Velocidad</div>
+        <div class="speed-options">
+          <button class="mini-btn" data-speed="slow" type="button">Lenta</button>
+          <button class="mini-btn active" data-speed="normal" type="button">Normal</button>
+          <button class="mini-btn" data-speed="fast" type="button">Rápida</button>
+        </div>
+
+        <div class="section-label">Tipo de lectura</div>
+        <div class="language-options">
+          <button class="mini-btn active" data-mode="simple" type="button">Para todos</button>
+          <button class="mini-btn" data-mode="technical" type="button">Técnica</button>
+        </div>
+
+        <div class="section-label">Leyenda</div>
+        <div class="legend-mini">
+          <div class="legend-row"><i class="dot"></i> Cliente y canales</div>
+          <div class="legend-row"><i class="dot orange"></i> Orquestación Genesys</div>
+          <div class="legend-row"><i class="dot green"></i> Herramientas del agente</div>
+          <div class="legend-row"><i class="dot violet"></i> Supervisión y mejora</div>
+        </div>
+      </aside>
+
+      <section class="canvas-card">
+        <div class="canvas-header">
+          <div>
+            <h2 id="diagramTitle">Journey orquestado: Siniestro de auto</h2>
+            <p id="diagramSubtitle">Un cliente reporta un siniestro. Genesys identifica intención, consulta sistemas, enruta y habilita al agente.</p>
+          </div>
+          <div class="state-pill" id="statePill">Listo para iniciar</div>
+        </div>
+
+        <div class="diagram-wrap" id="diagram">
+          <img class="diagram-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAu4AAACKCAMAAADCOT+dAAADAFBMVEVHcEwOESEJFSMOESUMEScVERoKEyQKEiUOESQLEikMEiYMEigKEikMEiULEikNDy0MEiYIEyQLEyYLEioLEigIFCYMESgNESgSEhsLEicLEiYLEicIEycMEScKEigOEiAOESQNESQNEiQKEyP/RRwNEiQLEicMEiXrTCkMEiUOESQLEicNESYKEikLESkMEicLEicNEiQLEigOEiEMEScMESYLEikMEiUMEiULEikNEiULEigNESUNESUMEicLEikLEikMEicMEicMEiYLEyYMEiYcFBgMEiYLEicKEigNEiULEigNESQLEigJEygMEiYMEScMEigJEigMEScMESgMESgLEicMESkMEigMEiUMESgLEicLEigLEigOESMMEib+RRsKEyYMEScMESYLEikNESYLEiULEicMEicLEigMEiUMESgMEScMEiYLESkLESn/RRoMEScLEikLEigMEicLEigMEScLESnoTSwLESgMESgMESgLEiYMEicMEScMEiYMEiYKEyYLESkLEicMEikMEiYMESf8Rh39RRz5Rx8MESgMEScMESgMEicMEiUMESrrTCn6Rx35Rx/9Rhz9Rh39Rhr6Rh7bVDD8Rhz8RR7iUS3ySiPjUC/5Rx8MEin8RR38Rh7+RRz8Rh32SCP7Rh7lTy3wSyL6Rx/0SSL/RBz8Rh34RyAMEib+RRvySiP8Rh3+RRz/RBv9Rhv/RBv4SB7eUjD8RR6fbVf6Rx5zT5/6Rx74SB3sTCgA4OD4SBz/PzcLEin/RRsMEikLEioLEycJEykLEigKEikKEisKEygLEygKEyn/RRkMEigLEicJEygNEikJFCYIFCgLEyX/RBwLEiwIEyoMESsMEioIEyv/RBv/RhoKEycJFCcJEycMESoKEyb9RhsHFCcHFSUKEioJEiwKEyoMEiYKFCMKEi3/Qx7/Rhf/RRwIFCULFCkNEykLEC3+RRz/RBkNESkNEScIEywMEiT9RR8KFCf+RRr/QSALEyr9RxgMEij5Rx0IEymUhWncAAAAwHRSTlMAIwVITwQ/K5PLrPD1NqwJ3Qn7yhnJhvACcofU4xs/Bw8VEnKXKHswlEQK9Fq091i7F5sNa4L5HVX7JdE7M6ThfnVNOctwAW73/EntIOiL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" alt="Genesys" />
+          <div class="layer-zone zone-customer"></div>
+          <div class="layer-zone zone-genesys"></div>
+          <div class="layer-zone zone-agent"></div>
+          <div class="layer-zone zone-supervisor"></div>
+          <div class="layer-zone zone-external"></div>
+          <div class="lane-title lane-customer">Cliente</div>
+          <div class="lane-title lane-genesys">Genesys Cloud</div>
+          <div class="lane-title lane-agent">Agente</div>
+          <div class="lane-title lane-supervisor">Supervisor</div>
+          <div class="lane-title lane-external">Sistemas conectados</div>
+
+          <svg class="connections" viewBox="0 0 1500 860" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+                <path d="M0,0 L0,6 L7,3 z" fill="rgba(255,255,255,.35)" />
+              </marker>
+            </defs>
+            <path id="c-web-entry" class="conn data" d="M240 175 C275 175, 295 175, 320 175" />
+            <path id="c-voice-entry" class="conn data" d="M240 350 C280 330, 292 215, 320 185" />
+            <path id="c-id-context" class="conn data" d="M240 525 C350 520, 665 190, 810 175" />
+            <path id="c-entry-bot" class="conn" d="M520 175 C538 175, 548 175, 565 175" />
+            <path id="c-bot-context" class="conn" d="M765 175 C782 175, 792 175, 810 175" />
+            <path id="c-context-architect" class="conn" d="M912 220 C895 278, 505 288, 420 365" />
+            <path id="c-architect-data" class="conn" d="M520 365 C538 365, 548 365, 565 365" />
+            <path id="c-data-routing" class="conn" d="M765 365 C782 365, 792 365, 810 365" />
+            <path id="c-routing-queue" class="conn" d="M912 410 C932 452, 922 492, 912 555" />
+            <path id="c-queue-workspace" class="conn agent" d="M1010 555 C1060 555, 1018 188, 1055 185" />
+            <path id="c-workspace-copilot" class="conn agent" d="M1162 230 C1162 270, 1162 306, 1162 350" />
+            <path id="c-copilot-wrap" class="conn agent" d="M1162 415 C1162 460, 1162 500, 1162 540" />
+            <path id="c-ai-copilot" class="conn agent" d="M668 555 C785 555, 930 365, 1055 365" />
+            <path id="c-knowledge-ai" class="conn" d="M520 555 C538 555, 548 555, 565 555" />
+            <path id="c-data-crm" class="conn data" d="M632 410 C610 618, 192 605, 160 735" />
+            <path id="c-data-core" class="conn data" d="M655 410 C640 605, 420 605, 435 735" />
+            <path id="c-data-pay" class="conn data" d="M685 410 C682 600, 700 625, 710 735" />
+            <path id="c-wrap-notify" class="conn" d="M1168 610 C1110 674, 990 645, 985 735" />
+            <path id="c-wrap-survey" class="conn" d="M1194 610 C1235 668, 1258 670, 1260 735" />
+            <path id="c-routing-realtime" class="conn supervisor" d="M1010 365 C1138 346, 1248 196, 1310 190" />
+            <path id="c-wrap-quality" class="conn supervisor" d="M1270 555 C1320 532, 1368 416, 1368 375" />
+            <path id="c-realtime-wem" class="conn supervisor" d="M1370 235 C1410 315, 1412 455, 1370 555" />
+          </svg>
+
+          <div class="particle" id="particle"></div>
+
+          <button class="node customer" id="n-web" data-node="web" type="button"><div class="icon">💬</div><strong>Canales digitales</strong><small>WhatsApp, web messaging, email, social.</small><span class="status">En espera</span></button>
+          <button class="node customer" id="n-voice" data-node="voice" type="button"><div class="icon">☎️</div><strong>Voz</strong><small>Llamada, IVR, bot de voz o transferencia.</small><span class="status">En espera</span></button>
+          <button class="node customer" id="n-id" data-node="id" type="button"><div class="icon">🪪</div><strong>Identidad</strong><small>Cliente, póliza, broker, caso o número.</small><span class="status">En espera</span></button>
+
+          <button class="node" id="n-entry" data-node="entry" type="button"><div class="icon">🌐</div><strong>Entrada omnicanal</strong><small>Une el contacto a una misma conversación.</small><span class="status">Preparado</span></button>
+          <button class="node" id="n-bot" data-node="bot" type="button"><div class="icon">🤖</div><strong>Bot / autoservicio</strong><small>Captura intención y resuelve lo simple.</small><span class="status">Preparado</span></button>
+          <button class="node" id="n-context" data-node="context" type="button"><div class="icon">🧠</div><strong>Contexto del cliente</strong><small>Historial, intención, sentimiento y prioridad.</small><span class="status">Preparado</span></button>
+          <button class="node" id="n-architect" data-node="architect" type="button"><div class="icon">🧩</div><strong>Architect / Flow</strong><small>Orquesta reglas, pasos y decisiones.</small><span class="status">Preparado</span></button>
+          <button class="node" id="n-data" data-node="data" type="button"><div class="icon">🔌</div><strong>Data Actions / APIs</strong><small>Consulta CRM, core, pagos o siniestros.</small><span class="status">Preparado</span></button>
+          <button class="node" id="n-routing" data-node="routing" type="button"><div class="icon">🎯</div><strong>Routing inteligente</strong><small>Asigna al mejor recurso según contexto.</small><span class="status">Preparado</span></button>
+          <button class="node" id="n-knowledge" data-node="knowledge" type="button"><div class="icon">📚</div><strong>Knowledge</strong><small>Artículos, guías y respuestas aprobadas.</small><span class="status">Preparado</span></button>
+          <button class="node" id="n-ai" data-node="ai" type="button"><div class="icon">✨</div><strong>Genesys AI</strong><small>Intención, resumen, predicción y asistencia.</small><span class="status">Preparado</span></button>
+          <button class="node" id="n-queue" data-node="queue" type="button"><div class="icon">📥</div><strong>Cola / prioridad</strong><small>SLA, skills, urgencia y capacidad.</small><span class="status">Preparado</span></button>
+
+          <button class="node agent-node" id="n-workspace" data-node="workspace" type="button"><div class="icon">🖥️</div><strong>Agent Workspace</strong><small>El agente recibe el caso con contexto.</small><span class="status">Listo</span></button>
+          <button class="node agent-node" id="n-copilot" data-node="copilot" type="button"><div class="icon">🧑‍✈️</div><strong>Agent Copilot</strong><small>Sugiere respuestas y próximas acciones.</small><span class="status">Listo</span></button>
+          <button class="node agent-node" id="n-wrap" data-node="wrap" type="button"><div class="icon">✅</div><strong>Wrap-up / caso</strong><small>Resume, documenta y dispara seguimiento.</small><span class="status">Listo</span></button>
+
+          <button class="node supervisor-node slim" id="n-realtime" data-node="realtime" type="button"><div class="icon">📊</div><strong>Real time</strong><span class="status">Vista</span></button>
+          <button class="node supervisor-node slim" id="n-quality" data-node="quality" type="button"><div class="icon">🎧</div><strong>Calidad</strong><span class="status">Vista</span></button>
+          <button class="node supervisor-node slim" id="n-wem" data-node="wem" type="button"><div class="icon">🗓️</div><strong>WEM</strong><span class="status">Vista</span></button>
+
+          <button class="node external" id="n-crm" data-node="crm" type="button"><div class="icon">👤</div><strong>CRM</strong><small>Cliente, broker, historial y preferencias.</small><span class="status">Conectado</span></button>
+          <button class="node external" id="n-core" data-node="core" type="button"><div class="icon">🏛️</div><strong>Core / sistema clave</strong><small>Pedido, crédito, viaje, póliza, contrato o reglas.</small><span class="status">Conectado</span></button>
+          <button class="node external" id="n-pay" data-node="pay" type="button"><div class="icon">💳</div><strong>Pagos</strong><small>Saldo, cobranza, link o promesa de pago.</small><span class="status">Conectado</span></button>
+          <button class="node external" id="n-notify" data-node="notify" type="button"><div class="icon">📣</div><strong>Notificaciones</strong><small>SMS, WhatsApp, email o actualización.</small><span class="status">Conectado</span></button>
+          <button class="node external" id="n-survey" data-node="survey" type="button"><div class="icon">⭐</div><strong>Encuesta / VoC</strong><small>CSAT, NPS, feedback y aprendizaje.</small><span class="status">Conectado</span></button>
+
+          <div class="action-ribbon" aria-hidden="true">
+            <div class="action-token" id="a-identificar"><b>Identificar</b><span>¿Quién es y qué necesita?</span></div>
+            <div class="action-token" id="a-consultar"><b>Consultar</b><span>Traer datos de sistemas.</span></div>
+            <div class="action-token" id="a-decidir"><b>Decidir</b><span>Mejor acción o ruta.</span></div>
+            <div class="action-token" id="a-asistir"><b>Asistir</b><span>Herramientas al agente.</span></div>
+            <div class="action-token" id="a-mejorar"><b>Mejorar</b><span>Métricas y aprendizaje.</span></div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="side-panel">
+        <section class="panel">
+          <h2>Qué está pasando</h2>
+          <p id="plainIntro">La demo inicia cuando el cliente solicita ayuda. Cada caja representa una capacidad que se activa con datos.</p>
+          <div class="story-now">
+            <div class="kicker" id="storyKicker">Paso actual</div>
+            <h3 id="storyTitle">Selecciona iniciar</h3>
+            <p id="storyText">Presiona “Iniciar recorrido” para ver cómo se activan las conexiones.</p>
+            <div class="story-actions">
+              <button id="playBtn" type="button">▶ Iniciar</button>
+              <button id="nextBtn" type="button">Siguiente</button>
+            </div>
+          </div>
+          <div class="stepper" id="stepper"></div>
+        </section>
+
+        <section class="panel">
+          <h2>Detalle de la caja</h2>
+          <p>Haz clic en cualquier caja del mapa para explicarla.</p>
+          <div class="detail-grid" id="nodeDetails"></div>
+        </section>
+
+        <section class="panel">
+          <h2>Vista del agente</h2>
+          <p>Lo que el agente recibe cuando Genesys ya orquestó el contexto.</p>
+          <div class="workspace-preview">
+            <div class="workspace-top"><b>Genesys Cloud Workspace</b><span id="agentStatus">Esperando interacción</span></div>
+            <div class="workspace-body">
+              <div class="customer-card-light"><div class="avatar" id="agentAvatar">CL</div><div><strong id="agentName">Cliente identificado</strong><small id="agentMeta">Canal, intención y prioridad aparecerán aquí.</small></div></div>
+              <div class="suggestion"><b>Next best action <span id="confidence">0%</span></b><p id="agentSuggestion">La recomendación se activará durante el recorrido.</p></div>
+              <div class="mini-bars"><div class="bar"><i id="bar1"></i></div><div class="bar"><i id="bar2"></i></div><div class="bar"><i id="bar3"></i></div></div>
+            </div>
+          </div>
+        </section>
+      </aside>
+    </main>
+
+
+    <section class="agent-desk-section" id="agentWorkspaceDemo">
+      <div class="agent-desk-head">
+        <div>
+          <h2>Cuando la conversación escala: escritorio del agente</h2>
+          <p>Esta vista reimagina el espacio de trabajo del agente sin marcas externas. Muestra cómo, después de la orquestación, la conversación llega con historial, datos del cliente, guía de atención, Copilot, trayectoria, respuestas preconfiguradas y señales para supervisión.</p>
+        </div>
+        <div class="desk-status" id="wsActiveBadge">Esperando escalamiento</div>
+      </div>
+
+      <div class="workspace-shell" id="wsShell">
+        <div class="gc-topbar">
+          <div class="gc-dot-logo" aria-label="Genesys"><span></span><span></span><span></span></div>
+          <strong>Genesys Cloud</strong>
+          <div class="gc-search">Buscar páginas, usuarios, grupos y ubicaciones</div>
+          <div class="gc-tabs">
+            <div class="gc-tab">Llamadas</div>
+            <div class="gc-tab">Chat</div>
+            <div class="gc-tab">Aplicaciones</div>
+            <div class="gc-tab live">Área de trabajo del agente</div>
+          </div>
+        </div>
+        <div class="workspace-scroll">
+          <div class="agent-desktop">
+            <div class="desk-pane">
+              <div class="pane-title">Conversaciones <span>1 activa</span></div>
+              <div class="conversation-list">
+                <div class="conv-card">
+                  <strong id="wsConversationName">Cliente</strong>
+                  <small id="wsChannel">Canal · Intención</small>
+                  <div class="time">1 min</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="desk-pane">
+              <div class="pane-title">Interacción <span class="desk-status-inline" id="wsInteractionStatus">En espera</span></div>
+              <div class="chat-body">
+                <div class="chat-contact"><div class="chat-avatar" id="wsChatAvatar">CL</div><span id="wsChatName">Cliente identificado</span></div>
+                <div class="chat-bubble" id="wsMessage1">Hola, necesito ayuda.</div>
+                <div class="chat-time">Hace unos segundos</div>
+                <div class="chat-bubble agent" id="wsMessage2">Te ayudo. Ya tengo tu información en pantalla.</div>
+                <div class="chat-compose" id="wsInputGhost">Escribe una respuesta o usa una respuesta preestablecida...</div>
+              </div>
+            </div>
+
+            <div class="desk-pane">
+              <div class="pane-title">Scripts / Aplicación <span>Screen pop</span></div>
+              <div class="script-pane">
+                <div class="script-card">
+                  <div class="script-hero">
+                    <div class="mini-brand">Customer Service Hub</div>
+                    <h3 id="wsScriptTitle">Pantalla principal de atención</h3>
+                  </div>
+                  <div class="script-grid">
+                    <div class="script-block">
+                      <h4>Datos del cliente</h4>
+                      <div class="field-row"><b>Nombre:</b><span id="wsCustomerName">Cliente</span></div>
+                      <div class="field-row"><b>ID / Folio:</b><span id="wsCustomerId">Pendiente</span></div>
+                      <div class="field-row"><b>Motivo:</b><span class="red" id="wsIntent">Por identificar</span></div>
+                      <div class="field-row"><b>Segmento:</b><span id="wsCustomerSegment">General</span></div>
+                      <div class="field-row"><b>Prioridad:</b><span class="green" id="wsPriority">Normal</span></div>
+                    </div>
+                    <div class="script-block">
+                      <h4>Herramientas de apoyo</h4>
+                      <div class="tool-stack">
+                        <div class="tool-pill" id="wsTool1">Verificar identidad</div>
+                        <div class="tool-pill" id="wsTool2">Consultar sistema clave</div>
+                        <div class="tool-pill" id="wsTool3">Crear o actualizar caso</div>
+                        <button class="main-action" id="wsActionButton" type="button">Continuar atención</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="desk-pane">
+              <div class="pane-title">Copilot <span>IA activada</span></div>
+              <div class="copilot-box">
+                <div class="copilot-head">Con inteligencia artificial <span class="ai-chip" id="wsCopilotConfidence">0%</span></div>
+                <div class="copilot-content">
+                  <div class="copilot-card"><b>Resumen de la conversación</b><p id="wsCopilotSummary">La interacción se resumirá cuando el caso sea escalado.</p></div>
+                  <div class="copilot-card"><b>Next best action</b><p id="wsCopilotNBA">La recomendación aparecerá aquí.</p></div>
+                  <div class="copilot-card"><b>Wrap-up sugerido</b><p id="wsCase">Pendiente de resultado.</p></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="desk-pane">
+              <div class="pane-title">Perfil <span>Customer 360</span></div>
+              <div class="profile-body">
+                <div class="profile-name"><div class="avatar-mini" id="wsProfileAvatar">CL</div><div><b id="wsProfileName">Cliente</b><small id="wsProfileMeta">Datos sincronizados</small></div></div>
+                <div class="profile-detail"><strong>Teléfono / correo</strong><span id="wsProfileContact">Validado por canal</span></div>
+                <div class="profile-detail"><strong>Última interacción</strong><span id="wsLastInteraction">Sin historial visible</span></div>
+                <div class="profile-detail"><strong>Valor o riesgo</strong><span id="wsRisk">Por calcular</span></div>
+              </div>
+            </div>
+
+            <div class="desk-pane">
+              <div class="pane-title">Trayectoria del cliente <span>Journey</span></div>
+              <div class="journey-list">
+                <div class="journey-item"><time>Hoy</time><div><b id="wsJourney1Title">Entrada al canal</b><span id="wsJourney1">El cliente inició conversación.</span></div></div>
+                <div class="journey-item"><time>Hoy</time><div><b id="wsJourney2Title">Consulta a sistemas</b><span id="wsJourney2">Genesys recupera contexto.</span></div></div>
+                <div class="journey-item"><time>Ahora</time><div><b id="wsJourney3Title">Escalamiento</b><span id="wsJourney3">El agente recibe la interacción.</span></div></div>
+              </div>
+            </div>
+
+            <div class="desk-pane">
+              <div class="pane-title">Respuestas preestablecidas <span>Knowledge</span></div>
+              <div class="responses">
+                <button class="response-btn" id="wsResponse1" type="button">Confirmación de identidad</button>
+                <button class="response-btn" id="wsResponse2" type="button">Explicación del estatus</button>
+                <button class="response-btn" id="wsResponse3" type="button">Cierre y seguimiento</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="supervisor-ribbon">
+          <div class="ribbon-metric"><b id="wsLiveMetric">00:42</b><span>Tiempo en conversación</span></div>
+          <div class="ribbon-metric"><b id="wsSlaMetric">Dentro SLA</b><span>Visibilidad supervisor</span></div>
+          <div class="ribbon-metric"><b id="wsSentimentMetric">Neutral</b><span>Sentimiento detectado</span></div>
+          <div class="ribbon-metric"><b id="wsNextMetric">Coaching</b><span>Siguiente acción operativa</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="public-section" id="explicacion">
+      <article class="public-card">
+        <h2>La idea para público general</h2>
+        <p>
+          Genesys Cloud no solo recibe llamadas o mensajes. En esta demo se muestra como una capa de orquestación: escucha señales, entiende contexto, consulta sistemas, decide la siguiente acción, ayuda al agente y da visibilidad al supervisor.
+        </p>
+        <div class="compare">
+          <div class="compare-box bad">
+            <h3>Sin orquestación</h3>
+            <ul>
+              <li>El cliente repite información.</li>
+              <li>El agente cambia entre sistemas.</li>
+              <li>El supervisor ve el problema tarde.</li>
+              <li>Los datos quedan fragmentados.</li>
+            </ul>
+          </div>
+          <div class="compare-box good">
+            <h3>Con orquestación</h3>
+            <ul>
+              <li>El contexto viaja con la interacción.</li>
+              <li>El agente recibe guía y datos.</li>
+              <li>El supervisor detecta riesgos en vivo.</li>
+              <li>Cada interacción alimenta la mejora.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="legend-card">
+        <h2>Qué ve cada rol</h2>
+        <p>La misma experiencia se entiende desde tres perspectivas.</p>
+        <div class="role-grid">
+          <div class="role-card"><div class="role-icon">👥</div><h3>Cliente</h3><p>Recibe atención por el canal que prefiera, sin reiniciar su historia.</p></div>
+          <div class="role-card"><div class="role-icon">🧑‍💻</div><h3>Agente</h3><p>Trabaja con contexto, sugerencias, conocimiento y acciones recomendadas.</p></div>
+          <div class="role-card"><div class="role-icon">🧭</div><h3>Supervisor</h3><p>Observa demanda, calidad, desempeño y oportunidades de mejora.</p></div>
+        </div>
+        <div class="footer-note">
+          Demo conceptual para explicar capacidades de orquestación. Los nombres Genesys y Genesys Cloud pertenecen a sus respectivos titulares. Ajusta el contenido, casos y conexiones según la arquitectura real de cada organización.
+        </div>
+      </article>
+    </section>
+  </div>
+
+  <div class="toast" id="toast">Activación actualizada</div>
+
+  <script>
+    const scenarios = {
+      siniestro: {
+        title:'Journey orquestado: Siniestro de auto',
+        subtitle:'Un cliente reporta un siniestro. Genesys identifica intención, consulta sistemas, enruta y habilita al agente.',
+        emoji:'🚗',
+        tag:'Urgencia + asistencia',
+        desc:'Reporte de accidente con necesidad de atención humana y seguimiento.',
+        metrics:['WhatsApp + Voz','Prioridad alta','Ajustador sugerido','Alerta SLA'],
+        agent:{name:'Mariana López', meta:'WhatsApp · Siniestro auto · Prioridad alta', suggestion:'Validar cobertura, confirmar ubicación, iniciar folio de siniestro y enviar instrucciones al cliente.', confidence:'94%', bars:[88,64,92]},
+        steps:[
+          {title:'El cliente pide ayuda', text:'Entra por WhatsApp o llamada para reportar un accidente. Genesys conserva el hilo de la conversación.', nodes:['web','voice','entry'], conns:['c-web-entry','c-voice-entry'], actions:['identificar']},
+          {title:'Se reconoce identidad e intención', text:'La plataforma identifica cliente, póliza, intención y posible urgencia.', nodes:['id','bot','context'], conns:['c-id-context','c-entry-bot','c-bot-context'], actions:['identificar','consultar']},
+          {title:'Se consulta cobertura y reglas', text:'Data Actions consulta CRM y core para validar póliza, cobertura y reglas de atención.', nodes:['architect','data','crm','core'], conns:['c-context-architect','c-architect-data','c-data-crm','c-data-core'], actions:['consultar','decidir']},
+          {title:'Se decide la mejor ruta', text:'Routing prioriza por urgencia y asigna el caso al agente con skill adecuado.', nodes:['routing','queue','realtime'], conns:['c-data-routing','c-routing-queue','c-routing-realtime'], actions:['decidir']},
+          {title:'El agente recibe contexto y ayuda', text:'El workspace muestra el caso, Copilot sugiere pasos y Knowledge ofrece guía aprobada.', nodes:['workspace','copilot','knowledge','ai'], conns:['c-queue-workspace','c-workspace-copilot','c-knowledge-ai','c-ai-copilot'], actions:['asistir']},
+          {title:'Se cierra, notifica y aprende', text:'El resumen actualiza el caso, se envía notificación y la encuesta alimenta métricas y calidad.', nodes:['wrap','notify','survey','quality','wem'], conns:['c-copilot-wrap','c-wrap-notify','c-wrap-survey','c-wrap-quality','c-realtime-wem'], actions:['mejorar']}
+        ]
+      },
+      cobranza: {
+        title:'Journey orquestado: Campaña de cobranza',
+        subtitle:'Una campaña se dispara para usuarios con deuda y Genesys coordina contacto, autoservicio, agente y seguimiento.',
+        emoji:'💳',
+        tag:'Cobranza + campaña',
+        desc:'Cliente con saldo vencido recibe contacto proactivo y opciones de regularización.',
+        metrics:['Campaña + WhatsApp','Mora detectada','Promesa de pago','Seguimiento'],
+        agent:{name:'Carlos Méndez', meta:'WhatsApp · Cobranza · Mora 15 días', suggestion:'Confirmar identidad, explicar saldo pendiente, ofrecer link seguro de pago o registrar promesa con fecha comprometida.', confidence:'90%', bars:[78,84,72]},
+        steps:[
+          {title:'La campaña se dispara', text:'Una regla detecta usuarios con saldo vencido y activa un mensaje por el canal preferido.', nodes:['crm','pay','notify','entry'], conns:['c-data-crm','c-data-pay','c-wrap-notify','c-web-entry'], actions:['identificar']},
+          {title:'El cliente responde', text:'La persona contesta el mensaje, entra a la conversación y Genesys conserva el contexto de campaña.', nodes:['web','entry','bot','context'], conns:['c-web-entry','c-entry-bot','c-bot-context'], actions:['identificar']},
+          {title:'Se valida deuda y opciones', text:'Data Actions consulta saldo, vencimiento, historial, restricciones y métodos disponibles.', nodes:['architect','data','crm','pay'], conns:['c-context-architect','c-architect-data','c-data-crm','c-data-pay'], actions:['consultar']},
+          {title:'Se decide autoservicio o agente', text:'Si el pago es simple, se envía link. Si hay objeción, promesa o riesgo, se enruta a cobranza.', nodes:['routing','queue','realtime'], conns:['c-data-routing','c-routing-queue','c-routing-realtime'], actions:['decidir']},
+          {title:'El agente recibe guía de negociación', text:'Workspace muestra saldo, riesgo, historial y Copilot sugiere alternativas de regularización.', nodes:['workspace','copilot','ai','knowledge'], conns:['c-queue-workspace','c-workspace-copilot','c-ai-copilot','c-knowledge-ai'], actions:['asistir']},
+          {title:'Se actualiza y se da seguimiento', text:'El cierre registra pago, promesa o no contacto; se agenda recordatorio y el supervisor ve efectividad de campaña.', nodes:['wrap','notify','survey','wem','quality'], conns:['c-copilot-wrap','c-wrap-notify','c-wrap-survey','c-realtime-wem','c-wrap-quality'], actions:['mejorar']}
+        ]
+      },
+      renovacion: {
+        title:'Journey orquestado: Renovación proactiva',
+        subtitle:'Genesys detecta una oportunidad y coordina oferta, canal, agente y seguimiento.',
+        emoji:'🔁',
+        tag:'Retención + oportunidad',
+        desc:'Cliente próximo a renovar requiere propuesta y atención personalizada.',
+        metrics:['Email + Voz','Oportunidad alta','Oferta visible','Forecast WEM'],
+        agent:{name:'Sofía Herrera', meta:'Voz · Renovación · Oportunidad alta', suggestion:'Presentar opción de renovación, confirmar datos del cliente y escalar descuento si hay señal de abandono.', confidence:'91%', bars:[84,70,77]},
+        steps:[
+          {title:'Se detecta ventana de renovación', text:'La interacción inicia por campaña, email o llamada del cliente.', nodes:['web','voice','entry'], conns:['c-web-entry','c-voice-entry'], actions:['identificar']},
+          {title:'Se unifica contexto', text:'Genesys combina canal, historial, producto, preferencias y probabilidad de conversión.', nodes:['id','context','bot'], conns:['c-id-context','c-entry-bot','c-bot-context'], actions:['identificar','consultar']},
+          {title:'Se consultan CRM y core', text:'Data Actions trae vigencia, producto, perfil, condiciones y elegibilidad.', nodes:['data','crm','core','architect'], conns:['c-context-architect','c-architect-data','c-data-crm','c-data-core'], actions:['consultar']},
+          {title:'Se enruta por valor y skill', text:'Routing asigna a un asesor con habilidad comercial y contexto de retención.', nodes:['routing','queue','realtime'], conns:['c-data-routing','c-routing-queue','c-routing-realtime'], actions:['decidir']},
+          {title:'El agente ve oferta y guion', text:'Copilot sugiere mensaje, objeciones y próximos pasos con base de conocimiento.', nodes:['workspace','copilot','knowledge','ai'], conns:['c-queue-workspace','c-workspace-copilot','c-knowledge-ai','c-ai-copilot'], actions:['asistir']},
+          {title:'Se documenta y mejora campaña', text:'El cierre alimenta forecast, calidad, encuesta y nuevas acciones.', nodes:['wrap','notify','survey','quality','wem'], conns:['c-copilot-wrap','c-wrap-notify','c-wrap-survey','c-wrap-quality','c-realtime-wem'], actions:['mejorar']}
+        ]
+      },
+      retail: {
+        title:'Journey orquestado: Retail - estatus de pedido',
+        subtitle:'Un comprador quiere saber dónde está su pedido. Genesys identifica la orden, consulta sistemas y responde o escala con contexto.',
+        emoji:'🛍️',
+        tag:'Retail + pedido',
+        desc:'Usuario consulta el estatus de su pedido y espera una respuesta rápida.',
+        metrics:['Web + WhatsApp','Pedido localizado','ETA visible','SLA de entrega'],
+        agent:{name:'Valeria Torres', meta:'Web messaging · Pedido #MX-28491 · Entrega demorada', suggestion:'Confirmar pedido, explicar estatus logístico, ofrecer nueva fecha estimada y activar notificación de seguimiento.', confidence:'92%', bars:[82,73,88]},
+        steps:[
+          {title:'El cliente pregunta por su pedido', text:'Entra por WhatsApp, web messaging o email y escribe: “quiero saber dónde está mi pedido”.', nodes:['web','entry','bot'], conns:['c-web-entry','c-entry-bot'], actions:['identificar']},
+          {title:'Se identifica la orden', text:'Genesys solicita o reconoce correo, teléfono o número de pedido y arma el contexto de compra.', nodes:['id','context','bot'], conns:['c-id-context','c-bot-context'], actions:['identificar']},
+          {title:'Se consulta e-commerce y logística', text:'Data Actions trae el estado del pedido, guía, transportista, fecha estimada y excepciones.', nodes:['architect','data','crm','core'], conns:['c-context-architect','c-architect-data','c-data-crm','c-data-core'], actions:['consultar']},
+          {title:'Se decide respuesta automática o agente', text:'Si solo requiere ETA, el bot responde. Si hay retraso, daño o reclamo, se enruta a un especialista.', nodes:['routing','queue','realtime'], conns:['c-data-routing','c-routing-queue','c-routing-realtime'], actions:['decidir']},
+          {title:'El agente ve pedido e historial', text:'Workspace muestra compra, dirección, transportista y Copilot sugiere compensación o siguiente paso.', nodes:['workspace','copilot','knowledge','ai'], conns:['c-queue-workspace','c-workspace-copilot','c-knowledge-ai','c-ai-copilot'], actions:['asistir']},
+          {title:'El cliente queda actualizado', text:'Se envía notificación de seguimiento, se actualiza el caso y se mide la experiencia.', nodes:['wrap','notify','survey','quality','wem'], conns:['c-copilot-wrap','c-wrap-notify','c-wrap-survey','c-wrap-quality','c-realtime-wem'], actions:['mejorar']}
+        ]
+      },
+      banca: {
+        title:'Journey orquestado: Banca - línea de crédito',
+        subtitle:'Un usuario pregunta si su línea de crédito fue aprobada. Genesys autentica, consulta decisión y guía el siguiente paso.',
+        emoji:'🏦',
+        tag:'Banca + crédito',
+        desc:'Cliente quiere conocer si su línea de crédito fue aprobada y qué debe hacer después.',
+        metrics:['App + Voz','Autenticación','Decisión visible','Riesgo controlado'],
+        agent:{name:'Andrés Salgado', meta:'Voz · Línea de crédito · Documentación pendiente', suggestion:'Validar identidad, explicar el estatus de aprobación, indicar documentos faltantes y enviar liga segura para completar el proceso.', confidence:'88%', bars:[76,86,80]},
+        steps:[
+          {title:'El cliente consulta su solicitud', text:'Entra por app, web messaging o llamada para saber si su línea de crédito fue aprobada.', nodes:['web','voice','entry'], conns:['c-web-entry','c-voice-entry'], actions:['identificar']},
+          {title:'Genesys valida identidad', text:'La conversación pide factores de verificación y recupera el folio de solicitud.', nodes:['id','bot','context'], conns:['c-id-context','c-entry-bot','c-bot-context'], actions:['identificar']},
+          {title:'Se consulta originación y CRM', text:'Data Actions recupera estatus, monto preaprobado, documentos faltantes y restricciones.', nodes:['architect','data','crm','core'], conns:['c-context-architect','c-architect-data','c-data-crm','c-data-core'], actions:['consultar']},
+          {title:'Se decide el tratamiento', text:'Si el resultado es claro, se informa en autoservicio; si requiere explicación, se enruta a un asesor bancario.', nodes:['routing','queue','realtime'], conns:['c-data-routing','c-routing-queue','c-routing-realtime'], actions:['decidir']},
+          {title:'El asesor recibe contexto sensible', text:'Workspace muestra solicitud, estatus, guion aprobado y Copilot sugiere cómo explicar el resultado.', nodes:['workspace','copilot','knowledge','ai'], conns:['c-queue-workspace','c-workspace-copilot','c-knowledge-ai','c-ai-copilot'], actions:['asistir']},
+          {title:'Se envía siguiente paso seguro', text:'El cierre actualiza CRM, manda liga segura o cita y permite monitorear calidad y cumplimiento.', nodes:['wrap','notify','survey','quality','wem'], conns:['c-copilot-wrap','c-wrap-notify','c-wrap-survey','c-wrap-quality','c-realtime-wem'], actions:['mejorar']}
+        ]
+      },
+      rh: {
+        title:'Journey orquestado: Recursos Humanos - vacaciones',
+        subtitle:'Un colaborador quiere saber cuántos días de vacaciones tiene. Genesys consulta HRIS y resuelve o escala a People Ops.',
+        emoji:'🏖️',
+        tag:'RH + autoservicio',
+        desc:'Empleado consulta su saldo de vacaciones disponible desde un canal interno.',
+        metrics:['Portal + Chat','SSO validado','Saldo visible','People Ops'],
+        agent:{name:'Fernanda Ibarra', meta:'Chat interno · Vacaciones · Saldo disponible', suggestion:'Confirmar saldo, explicar política de uso, compartir liga de solicitud y aclarar aprobación con manager si aplica.', confidence:'95%', bars:[91,79,74]},
+        steps:[
+          {title:'El colaborador pregunta por vacaciones', text:'Desde portal interno o chat escribe: “¿cuántos días de vacaciones tengo disponibles?”.', nodes:['web','entry','bot'], conns:['c-web-entry','c-entry-bot'], actions:['identificar']},
+          {title:'Se valida identidad interna', text:'Genesys usa SSO o datos del empleado para reconocer área, país, antigüedad y políticas aplicables.', nodes:['id','context','bot'], conns:['c-id-context','c-bot-context'], actions:['identificar']},
+          {title:'Se consulta sistema de RH', text:'Data Actions consulta saldo disponible, días tomados, próximos periodos y reglas internas.', nodes:['architect','data','crm','core'], conns:['c-context-architect','c-architect-data','c-data-crm','c-data-core'], actions:['consultar']},
+          {title:'Se decide si basta autoservicio', text:'Si la consulta es simple, se responde al momento; si hay diferencia de saldo, se enruta a People Ops.', nodes:['routing','queue','realtime'], conns:['c-data-routing','c-routing-queue','c-routing-realtime'], actions:['decidir']},
+          {title:'El especialista recibe datos del empleado', text:'Workspace muestra saldo, política, historial y Copilot sugiere explicación clara.', nodes:['workspace','copilot','knowledge','ai'], conns:['c-queue-workspace','c-workspace-copilot','c-knowledge-ai','c-ai-copilot'], actions:['asistir']},
+          {title:'Se cierra y se mide experiencia interna', text:'El caso queda documentado, se envía liga de solicitud y RR. HH. detecta temas recurrentes.', nodes:['wrap','notify','survey','quality','wem'], conns:['c-copilot-wrap','c-wrap-notify','c-wrap-survey','c-wrap-quality','c-realtime-wem'], actions:['mejorar']}
+        ]
+      },
+      vivienda: {
+        title:'Journey orquestado: Vivienda - casa de tus sueños',
+        subtitle:'Un interesado pide información sobre una vivienda y quiere saber si le alcanza. Genesys conecta inventario, simulación y asesoría.',
+        emoji:'🏡',
+        tag:'Vivienda + precalificación',
+        desc:'Usuario quiere información de una vivienda y una estimación de capacidad de compra.',
+        metrics:['Web + WhatsApp','Lead calificado','Simulación lista','Cita sugerida'],
+        agent:{name:'Paola Rivas', meta:'WhatsApp · Vivienda · Interés alto', suggestion:'Confirmar zona y presupuesto, explicar opciones disponibles, simular mensualidad y proponer visita o cita con asesor hipotecario.', confidence:'87%', bars:[79,88,69]},
+        steps:[
+          {title:'El interesado describe su vivienda ideal', text:'Indica zona, presupuesto, habitaciones y pregunta si le alcanza para comprar.', nodes:['web','entry','bot'], conns:['c-web-entry','c-entry-bot'], actions:['identificar']},
+          {title:'Se captura preferencia y perfil', text:'Genesys identifica intención, rango de precio, ubicación, momento de compra y datos de contacto.', nodes:['id','context','bot'], conns:['c-id-context','c-bot-context'], actions:['identificar']},
+          {title:'Se consulta inventario y simulador', text:'Data Actions trae propiedades disponibles, precio, enganche estimado, mensualidad y reglas de precalificación.', nodes:['architect','data','crm','core','pay'], conns:['c-context-architect','c-architect-data','c-data-crm','c-data-core','c-data-pay'], actions:['consultar']},
+          {title:'Se decide mejor siguiente acción', text:'Según capacidad e intención, se recomienda autoservicio, asesor comercial o cita para visita.', nodes:['routing','queue','realtime'], conns:['c-data-routing','c-routing-queue','c-routing-realtime'], actions:['decidir']},
+          {title:'El asesor recibe lead calificado', text:'Workspace muestra preferencias, propiedades sugeridas y Copilot propone un discurso consultivo.', nodes:['workspace','copilot','knowledge','ai'], conns:['c-queue-workspace','c-workspace-copilot','c-knowledge-ai','c-ai-copilot'], actions:['asistir']},
+          {title:'Se agenda y nutre el lead', text:'Se envía ficha, simulación, cita o recordatorio; el supervisor ve conversión por campaña y zona.', nodes:['wrap','notify','survey','quality','wem'], conns:['c-copilot-wrap','c-wrap-notify','c-wrap-survey','c-wrap-quality','c-realtime-wem'], actions:['mejorar']}
+        ]
+      },
+      logistica: {
+        title:'Journey orquestado: Logística - compra de boleto',
+        subtitle:'Un usuario quiere comprar un boleto de viaje. Genesys consulta rutas, disponibilidad, pago y entrega el comprobante.',
+        emoji:'🚌',
+        tag:'Logística + venta',
+        desc:'Cliente busca comprar un boleto de viaje con disponibilidad y pago en tiempo real.',
+        metrics:['Chat + Voz','Ruta elegida','Pago seguro','Boleto enviado'],
+        agent:{name:'Miguel Castillo', meta:'Chat · Viaje CDMX-GDL · Pago pendiente', suggestion:'Confirmar ruta, horario y pasajero; enviar link de pago seguro y entregar boleto digital al confirmar.', confidence:'93%', bars:[85,81,90]},
+        steps:[
+          {title:'El usuario pide un boleto', text:'Entra por chat o llamada y solicita comprar un viaje indicando origen, destino y fecha.', nodes:['web','voice','entry'], conns:['c-web-entry','c-voice-entry'], actions:['identificar']},
+          {title:'Se capturan datos de viaje', text:'El bot entiende ruta, fecha, horario, número de pasajeros y preferencias.', nodes:['bot','context','id'], conns:['c-entry-bot','c-bot-context','c-id-context'], actions:['identificar']},
+          {title:'Se consulta disponibilidad y precio', text:'Data Actions revisa inventario de asientos, tarifas, promociones y métodos de pago.', nodes:['architect','data','core','pay'], conns:['c-context-architect','c-architect-data','c-data-core','c-data-pay'], actions:['consultar']},
+          {title:'Se decide venta automática o apoyo', text:'Si todo está claro, se envía pago; si hay cambio, error o alta demanda, se enruta a un agente.', nodes:['routing','queue','realtime'], conns:['c-data-routing','c-routing-queue','c-routing-realtime'], actions:['decidir']},
+          {title:'El agente ve carrito y opciones', text:'Workspace muestra ruta, asiento, tarifa y Copilot sugiere alternativas si el horario no está disponible.', nodes:['workspace','copilot','knowledge','ai'], conns:['c-queue-workspace','c-workspace-copilot','c-knowledge-ai','c-ai-copilot'], actions:['asistir']},
+          {title:'Se confirma y envía boleto', text:'El cierre actualiza compra, manda boleto digital y registra feedback para optimizar rutas y capacidad.', nodes:['wrap','notify','survey','quality','wem'], conns:['c-copilot-wrap','c-wrap-notify','c-wrap-survey','c-wrap-quality','c-realtime-wem'], actions:['mejorar']}
+        ]
+      },
+      broker: {
+        title:'Journey orquestado: Broker o agente comercial',
+        subtitle:'Un broker solicita estatus. Genesys evita correos sueltos y conecta datos, prioridad y respuesta.',
+        emoji:'🤝',
+        tag:'Agente externo + operación',
+        desc:'Broker necesita claridad sobre emisión, cobranza o trámite pendiente.',
+        metrics:['Portal + Email','Prioridad broker','Caso completo','Backlog visible'],
+        agent:{name:'Daniel Ruiz', meta:'Email · Broker · Emisión pendiente', suggestion:'Confirmar folio, explicar causa del retraso y enviar fecha compromiso con actualización automática.', confidence:'86%', bars:[69,76,81]},
+        steps:[
+          {title:'El broker solicita estatus', text:'Entra por portal, email o llamada y se identifica el folio relacionado.', nodes:['web','voice','id','entry'], conns:['c-web-entry','c-voice-entry','c-id-context'], actions:['identificar']},
+          {title:'Se entiende el motivo', text:'Genesys clasifica si es emisión, cobranza, endoso o siniestro.', nodes:['bot','context','architect'], conns:['c-entry-bot','c-bot-context','c-context-architect'], actions:['identificar']},
+          {title:'Se buscan datos operativos', text:'Data Actions consulta CRM, core y sistemas de proceso para traer el estado real.', nodes:['data','crm','core'], conns:['c-architect-data','c-data-crm','c-data-core'], actions:['consultar']},
+          {title:'Se prioriza por broker y SLA', text:'El routing evita una bandeja genérica y asigna según skill, urgencia y tipo de trámite.', nodes:['routing','queue','realtime'], conns:['c-data-routing','c-routing-queue','c-routing-realtime'], actions:['decidir']},
+          {title:'El agente responde con contexto', text:'Workspace muestra datos del broker, historial y respuesta sugerida.', nodes:['workspace','copilot','knowledge','ai'], conns:['c-queue-workspace','c-workspace-copilot','c-knowledge-ai','c-ai-copilot'], actions:['asistir']},
+          {title:'El caso queda trazable', text:'Se actualiza el caso, se notifica al broker y el supervisor ve cuellos de botella.', nodes:['wrap','notify','quality','wem'], conns:['c-copilot-wrap','c-wrap-notify','c-wrap-quality','c-realtime-wem'], actions:['mejorar']}
+        ]
+      },
+      queja: {
+        title:'Journey orquestado: Queja crítica',
+        subtitle:'Una mala experiencia se detecta temprano y activa contención, supervisión y cierre controlado.',
+        emoji:'🚨',
+        tag:'Riesgo + supervisor',
+        desc:'Cliente molesto requiere prioridad, empatía y visibilidad ejecutiva.',
+        metrics:['Voz + Social','Riesgo alto','Supervisor alerta','Calidad crítica'],
+        agent:{name:'Laura Sánchez', meta:'Voz · Queja crítica · Sentimiento negativo', suggestion:'Reconocer la molestia, confirmar datos, ofrecer plan de resolución y solicitar apoyo de supervisor si el riesgo escala.', confidence:'96%', bars:[93,58,95]},
+        steps:[
+          {title:'La queja entra por voz o social', text:'El cliente expresa frustración. La señal de sentimiento se vuelve parte del contexto.', nodes:['voice','web','entry'], conns:['c-voice-entry','c-web-entry'], actions:['identificar']},
+          {title:'Se detecta riesgo', text:'Genesys identifica intención, sentimiento negativo y antecedentes.', nodes:['id','context','ai'], conns:['c-id-context','c-bot-context','c-knowledge-ai'], actions:['identificar','decidir']},
+          {title:'Se consulta historial', text:'Data Actions trae caso previo, promesas incumplidas y datos de cliente.', nodes:['architect','data','crm','core'], conns:['c-context-architect','c-architect-data','c-data-crm','c-data-core'], actions:['consultar']},
+          {title:'Se prioriza y alerta al supervisor', text:'Routing asigna un agente apto y el dashboard marca el riesgo en tiempo real.', nodes:['routing','queue','realtime'], conns:['c-data-routing','c-routing-queue','c-routing-realtime'], actions:['decidir']},
+          {title:'El agente recibe guía sensible', text:'Copilot propone tono, pasos de contención y Knowledge entrega respuesta aprobada.', nodes:['workspace','copilot','knowledge','ai'], conns:['c-queue-workspace','c-workspace-copilot','c-knowledge-ai','c-ai-copilot'], actions:['asistir']},
+          {title:'Calidad y seguimiento', text:'El cierre se revisa, se documenta y se dispara seguimiento para evitar reincidencia.', nodes:['wrap','notify','survey','quality','wem'], conns:['c-copilot-wrap','c-wrap-notify','c-wrap-survey','c-wrap-quality','c-realtime-wem'], actions:['mejorar']}
+        ]
+      }
+    };
+
+
+    const workspaceData = {
+      siniestro:{channel:'WhatsApp · Siniestro auto', customer:'Mariana López', contact:'55 4829 1140 · mariana@email.com', id:'SIN-48291', intent:'Reporte de siniestro', segment:'Cliente activo · Auto', priority:'Alta', msg1:'Tuve un accidente y necesito reportarlo.', msg2:'Ya validé tu póliza. Voy a iniciar el folio y enviarte los pasos.', script:'Atención de siniestro auto', tools:['Validar cobertura','Crear folio de siniestro','Enviar instrucciones al cliente'], action:'Iniciar folio y solicitar ubicación', summary:'Cliente reporta accidente. Póliza activa, ubicación pendiente y posible necesidad de ajustador.', nba:'Confirma seguridad del cliente, valida ubicación, genera folio y ofrece seguimiento por WhatsApp.', wrap:'Siniestro registrado · ajustador sugerido', profile:'Cliente desde 2022 · Cobertura amplia', last:'Cotización y renovación hace 21 días', risk:'Urgencia alta · SLA crítico', journey:['Mensaje entrante por WhatsApp','Consulta de póliza y cobertura','Transferencia a agente con skill siniestros'], responses:['Solicitar ubicación segura','Confirmar folio de siniestro','Enviar pasos post-siniestro'], metrics:['01:18','SLA crítico','Preocupado','Monitorear']},
+      cobranza:{channel:'Campaña WhatsApp · Cobranza', customer:'Carlos Méndez', contact:'55 2091 8827 · carlos@email.com', id:'COB-77812', intent:'Saldo vencido', segment:'Mora 15 días', priority:'Media', msg1:'Recibí un mensaje de pago, quiero revisar mi saldo.', msg2:'Ya tengo tu saldo y opciones. Puedo enviarte un link seguro o registrar una promesa.', script:'Atención de cobranza preventiva', tools:['Verificar identidad','Consultar saldo vencido','Enviar link de pago seguro'], action:'Negociar opción de regularización', summary:'Cliente respondió campaña por saldo vencido. Tiene deuda activa y posibilidad de promesa de pago.', nba:'Explica saldo, confirma fecha factible, ofrece link seguro o registra promesa con recordatorio.', wrap:'Promesa de pago o pago iniciado', profile:'Cliente recurrente · pago tardío ocasional', last:'Recordatorio enviado hace 3 días', risk:'Riesgo medio · posible recuperación', journey:['Campaña disparada por mora','Cliente responde por canal preferido','Agente recibe saldo, riesgo y guion'], responses:['Detalle de saldo pendiente','Enviar link seguro de pago','Registrar promesa de pago'], metrics:['00:56','En SLA','Neutral','Medir conversión']},
+      renovacion:{channel:'Voz · Renovación', customer:'Sofía Herrera', contact:'55 7734 1902 · sofia@email.com', id:'REN-14092', intent:'Renovación proactiva', segment:'Alto valor', priority:'Alta', msg1:'Quiero revisar mi renovación antes de decidir.', msg2:'Tengo tu oferta y beneficios disponibles. Revisemos la mejor opción.', script:'Atención de renovación', tools:['Ver oferta vigente','Comparar beneficios','Solicitar excepción comercial'], action:'Presentar oferta personalizada', summary:'Cliente en ventana de renovación con intención comercial y riesgo de abandono.', nba:'Presenta valor, confirma necesidades y ofrece incentivo si detectas objeción de precio.', wrap:'Oferta presentada · seguimiento comercial', profile:'Cliente desde 2021 · valor alto', last:'Email de renovación abierto ayer', risk:'Oportunidad alta · riesgo de fuga', journey:['Se detecta ventana de renovación','Cliente interactúa con campaña','Asesor recibe oferta y objeciones probables'], responses:['Resumen de beneficios','Oferta de renovación','Agendar llamada de seguimiento'], metrics:['02:04','En SLA','Interesado','Forecast demanda']},
+      retail:{channel:'Web messaging · Retail', customer:'Valeria Torres', contact:'55 1882 9440 · valeria@email.com', id:'PED-MX-28491', intent:'Estatus de pedido', segment:'Comprador digital', priority:'Media', msg1:'Hola, quiero saber dónde está mi pedido.', msg2:'Ya encontré tu orden. Te comparto el estatus y la fecha estimada.', script:'Atención de pedido retail', tools:['Buscar pedido','Consultar transportista','Crear seguimiento de entrega'], action:'Confirmar ETA y activar notificación', summary:'Cliente solicita estatus de pedido. Orden localizada con entrega demorada.', nba:'Explica causa de retraso, ofrece fecha estimada y activa notificación automática.', wrap:'Pedido actualizado · notificación activa', profile:'Cliente online · 4 compras últimos 90 días', last:'Pedido creado hace 4 días', risk:'Riesgo de insatisfacción por retraso', journey:['Pregunta por web messaging','Data Action consulta orden y guía','Agente recibe pedido e historial'], responses:['Compartir estatus de pedido','Explicar retraso logístico','Activar alerta de entrega'], metrics:['00:49','En SLA','Ansioso','Vigilar reclamos']},
+      banca:{channel:'App bancaria · Crédito', customer:'Andrés Rivera', contact:'55 3200 1040 · andres@email.com', id:'SOL-CR-93842', intent:'Aprobación de crédito', segment:'Cliente nómina', priority:'Alta', msg1:'Quiero saber si mi línea de crédito fue aprobada.', msg2:'Ya validé tu solicitud. Te explico el resultado y el siguiente paso.', script:'Atención de línea de crédito', tools:['Autenticación reforzada','Consultar originación','Validar documentos faltantes'], action:'Explicar decisión y siguiente paso', summary:'Cliente autenticado consulta estatus de solicitud de crédito. Hay resultado y condiciones disponibles.', nba:'Comunica el estatus con lenguaje claro, menciona documentos faltantes si aplica y ofrece continuar proceso.', wrap:'Estatus informado · siguiente paso registrado', profile:'Cliente nómina · buen historial interno', last:'Solicitud enviada hace 48 horas', risk:'Dato sensible · requiere explicación clara', journey:['Cliente entra desde app','Autenticación y folio recuperados','Asesor recibe decisión y guion aprobado'], responses:['Confirmar autenticación','Explicar estatus de solicitud','Indicar documentos faltantes'], metrics:['01:36','SLA regulatorio','Expectante','Calidad prioritaria']},
+      rh:{channel:'Portal interno · RH', customer:'Natalia Gómez', contact:'Ext. 2044 · natalia@empresa.com', id:'EMP-11872', intent:'Saldo de vacaciones', segment:'Empleado activo', priority:'Baja', msg1:'¿Cuántos días de vacaciones tengo disponibles?', msg2:'Ya consulté tu saldo. También puedo ayudarte a solicitar fechas.', script:'Atención interna de Recursos Humanos', tools:['Validar empleado','Consultar HRIS','Iniciar solicitud de vacaciones'], action:'Informar saldo y política aplicable', summary:'Empleado consulta días disponibles de vacaciones. Sistema HRIS recupera saldo y política.', nba:'Comparte saldo disponible, explica regla de acumulación y ofrece iniciar solicitud.', wrap:'Consulta RH resuelta · autoservicio sugerido', profile:'Empleado activo · antigüedad 3 años', last:'Solicitud aprobada hace 6 meses', risk:'Bajo · oportunidad de autoservicio', journey:['Consulta desde portal interno','HRIS valida saldo y política','Especialista recibe datos listos'], responses:['Compartir saldo de vacaciones','Explicar política de acumulación','Enviar liga de solicitud'], metrics:['00:33','En SLA','Neutral','Automatizar FAQ']},
+      vivienda:{channel:'Web · Vivienda', customer:'Paola Rivas', contact:'55 6021 8893 · paola@email.com', id:'LEAD-VIV-2209', intent:'Vivienda ideal y capacidad', segment:'Lead calificado', priority:'Alta', msg1:'Busco una vivienda de 3 recámaras. ¿Me alcanza?', msg2:'Ya tengo tus preferencias. Puedo simular escenarios y sugerir opciones.', script:'Asesoría de vivienda y capacidad de compra', tools:['Capturar preferencias','Simular mensualidad','Agendar visita o asesoría'], action:'Calificar lead y proponer opciones', summary:'Interesada solicita información de vivienda y capacidad estimada. Alta intención de compra.', nba:'Confirma zona, presupuesto y enganche. Presenta opciones realistas y agenda cita.', wrap:'Lead calificado · cita sugerida', profile:'Prospecto digital · interés alto', last:'Vio 3 propiedades hoy', risk:'Alta oportunidad · requiere seguimiento rápido', journey:['Lead entra por sitio','Se calculan preferencias y capacidad','Asesor recibe propiedades sugeridas'], responses:['Solicitar presupuesto y zona','Compartir simulación estimada','Agendar visita con asesor'], metrics:['01:05','En SLA','Interesada','Impulsar conversión']},
+      logistica:{channel:'Web / WhatsApp · Viaje', customer:'Jorge Salazar', contact:'55 7810 3120 · jorge@email.com', id:'VIAJE-55420', intent:'Compra de boleto', segment:'Comprador en proceso', priority:'Media', msg1:'Quiero comprar un boleto para viajar mañana.', msg2:'Ya revisé disponibilidad. Te muestro horarios, tarifa y opciones de asiento.', script:'Compra asistida de boleto de viaje', tools:['Buscar ruta','Consultar disponibilidad','Generar link de pago'], action:'Reservar opción y enviar pago', summary:'Cliente quiere comprar boleto. Ruta y fecha detectadas con disponibilidad parcial.', nba:'Confirma origen, destino, horario y asiento; si acepta, envía link de pago.', wrap:'Reserva iniciada · link de pago enviado', profile:'Viajero frecuente · canal digital', last:'Compra hace 2 meses', risk:'Abandono si no hay horario ideal', journey:['Cliente pregunta por boleto','Sistema consulta rutas y disponibilidad','Agente recibe carrito y alternativas'], responses:['Confirmar origen y destino','Compartir horarios disponibles','Enviar link de pago'], metrics:['00:58','En SLA','Decidido','Optimizar conversión']},
+      broker:{channel:'Email / WhatsApp · Broker', customer:'Diego Fernández', contact:'55 3344 9081 · diego@broker.com', id:'BRK-90211', intent:'Seguimiento comercial', segment:'Broker estratégico', priority:'Alta', msg1:'Necesito saber el avance de varias solicitudes.', msg2:'Ya tengo el historial y pendientes. Te doy visibilidad por caso.', script:'Atención a broker / agente comercial', tools:['Consultar cartera','Revisar solicitudes','Escalar caso interno'], action:'Responder con trazabilidad', summary:'Broker solicita claridad sobre solicitudes pendientes y tiempos de respuesta.', nba:'Prioriza solicitudes vencidas, explica próximos pasos y agenda seguimiento con responsable.', wrap:'Seguimiento broker · pendientes actualizados', profile:'Broker estratégico · alto volumen', last:'3 casos consultados esta semana', risk:'Relación crítica · claridad operativa', journey:['Broker entra por canal preferido','Genesys recupera cartera y casos','Agente ve historial y responsables'], responses:['Resumen por solicitud','Escalamiento interno','Compromiso de seguimiento'], metrics:['01:44','SLA sensible','Demandante','Visibilidad gerencial']},
+      queja:{channel:'Voz · Queja crítica', customer:'Laura Sánchez', contact:'55 9910 2410 · laura@email.com', id:'QJA-77701', intent:'Queja crítica', segment:'Cliente en riesgo', priority:'Crítica', msg1:'He llamado varias veces y nadie me resuelve.', msg2:'Entiendo la situación. Ya tengo el historial y voy a priorizar el caso.', script:'Atención de queja crítica', tools:['Ver historial completo','Escalar a supervisor','Registrar compromiso'], action:'Resolver o escalar con prioridad', summary:'Cliente expresa frustración por falta de resolución. Alto riesgo de churn o queja formal.', nba:'Reconoce el problema, evita pedir datos repetidos, confirma compromiso y escala si no hay resolución inmediata.', wrap:'Queja crítica · supervisor notificado', profile:'Cliente con múltiples contactos recientes', last:'3 interacciones en 7 días', risk:'Alto riesgo · intervención supervisor', journey:['Cliente llama con frustración','Journey muestra contactos repetidos','Supervisor y agente reciben alerta'], responses:['Reconocer y disculparse','Confirmar plan de resolución','Escalar a supervisor'], metrics:['02:31','SLA vencido','Negativo','Intervenir ahora']}
+    };
+
+    const nodeInfo = {
+      web:{title:'Canales digitales', simple:'El cliente escribe por el canal que le queda más cómodo.', technical:'Mensajería web, WhatsApp, social, email o canales digitales conectados al enrutamiento.', receives:'Mensaje, adjuntos, intención inicial, número o usuario.', decides:'Si puede seguir en autoservicio o necesita más contexto.', activates:'Entrada omnicanal y conversación persistente.'},
+      voice:{title:'Voz', simple:'El cliente llama y puede interactuar con IVR, bot de voz o agente.', technical:'Voz, IVR, flujos de Architect, colas, skills y grabación según configuración.', receives:'ANI, DNIS, selección IVR, voz, intención.', decides:'Ruta inicial, autoservicio o transferencia.', activates:'Flow, identificación y priorización.'},
+      id:{title:'Identidad', simple:'Genesys intenta reconocer quién es la persona y qué caso trae.', technical:'Identificación por datos declarados, CRM, token, SSO, número, cuenta, pedido o folio.', receives:'Cliente, empleado, pedido, póliza, caso, teléfono o correo.', decides:'Nivel de confianza y datos requeridos.', activates:'Contexto, consulta a sistemas y personalización.'},
+      entry:{title:'Entrada omnicanal', simple:'Une el contacto sin importar si llegó por voz, chat o mensaje.', technical:'Capa de entrada que normaliza eventos de canales y los conecta con conversaciones.', receives:'Evento del canal, metadata y estado de conversación.', decides:'Qué flujo debe iniciar.', activates:'Bot, Architect o routing.'},
+      bot:{title:'Bot / autoservicio', simple:'Intenta entender y resolver lo básico antes de pasar a una persona.', technical:'Virtual Agent, bot flows o automatización conversacional basada en intención.', receives:'Mensaje, intención, entidades, autenticación parcial.', decides:'Resolver, pedir dato, consultar sistema o transferir.', activates:'Contexto, Data Actions y handoff.'},
+      context:{title:'Contexto del cliente', simple:'Arma una vista de lo que se sabe del cliente y su necesidad.', technical:'Perfil, historial, intención, sentimiento, journey, prioridad y atributos de routing.', receives:'Datos de canal, bot, identidad, sistemas y eventos previos.', decides:'Prioridad, riesgo y personalización.', activates:'Architect, routing, agente y supervisor.'},
+      architect:{title:'Architect / Flow', simple:'Es el diseñador de la lógica: qué paso sigue y bajo qué condición.', technical:'Flows de voz, bot, mensajería, in-queue, workflows y lógica condicional.', receives:'Contexto, variables, intención, horarios, reglas.', decides:'Ramas, acciones, consultas, transferencias y cierres.', activates:'Data Actions, routing, bots, notificaciones.'},
+      data:{title:'Data Actions / APIs', simple:'Trae información de otros sistemas para decidir mejor.', technical:'Integraciones y llamadas API para consultar o actualizar sistemas externos.', receives:'Variables del flow, credenciales, IDs, payloads.', decides:'No decide sola: devuelve datos para reglas y acciones.', activates:'CRM, core, pagos, notificaciones, caso.'},
+      routing:{title:'Routing inteligente', simple:'Busca a la mejor persona o recurso para atender el caso.', technical:'ACD, skills, prioridad, capacidad, performance, reglas y opciones predictivas.', receives:'Intención, prioridad, skill, idioma, segmento, SLA.', decides:'Cola, agente, prioridad o tratamiento.', activates:'Queue, workspace y supervisión.'},
+      knowledge:{title:'Knowledge', simple:'Da respuestas aprobadas para que agente y bot no improvisen.', technical:'Base de conocimiento usada por bots, agentes y asistencia contextual.', receives:'Intención, pregunta, producto, contexto.', decides:'Artículo o respuesta más relevante.', activates:'Respuesta sugerida, guía y consistencia.'},
+      ai:{title:'Genesys AI', simple:'Ayuda a entender, predecir, resumir y recomendar.', technical:'AI para intención, predicción, asistencia, resumen, análisis y automatización.', receives:'Conversación, datos de journey, señales de comportamiento.', decides:'Sugerencias, predicciones y clasificación.', activates:'Copilot, routing, analytics y automatización.'},
+      queue:{title:'Cola / prioridad', simple:'Organiza la espera y mantiene el caso en la ruta correcta.', technical:'Queue management con prioridad, SLA, skills, bullseye o reglas configuradas.', receives:'Destino, prioridad, skill y estado de agentes.', decides:'Orden y asignación.', activates:'Agent workspace y métricas realtime.'},
+      workspace:{title:'Agent Workspace', simple:'El agente recibe la interacción con información lista.', technical:'Interfaz de agente con interacciones, scripts, screen pop, historial e integraciones.', receives:'Conversación, cliente, caso, cola, datos externos.', decides:'No decide por sí solo: habilita al agente.', activates:'Respuesta, actualización, transferencia o cierre.'},
+      copilot:{title:'Agent Copilot', simple:'Sugiere qué decir y qué hacer mientras el agente atiende.', technical:'Asistencia al agente con contexto, knowledge, resumen y próximos pasos.', receives:'Conversación en vivo, intención, knowledge y datos del caso.', decides:'Sugerencias, resumen y wrap-up probable.', activates:'Respuesta guiada y documentación.'},
+      wrap:{title:'Wrap-up / caso', simple:'Al final, deja registro y activa seguimiento.', technical:'Códigos de cierre, resumen, actualización de CRM, workflow y acciones post-interacción.', receives:'Resultado, conversación, notas, código de cierre.', decides:'Siguiente acción o seguimiento según reglas.', activates:'Notificación, encuesta, calidad y analytics.'},
+      realtime:{title:'Real time dashboards', simple:'El supervisor ve qué está pasando en vivo.', technical:'Dashboards y vistas operativas con colas, SLA, volumen, tiempos y estado.', receives:'Eventos de interacción, cola, agente y SLA.', decides:'Dónde intervenir o reasignar.', activates:'Coaching, monitoreo y ajuste operativo.'},
+      quality:{title:'Calidad', simple:'Permite revisar conversaciones y mejorar la atención.', technical:'Quality management, evaluaciones, grabaciones, speech/text analytics según licenciamiento.', receives:'Grabación, transcripción, resultado y métricas.', decides:'Evaluación, coaching o mejora.', activates:'Planes de calidad y capacitación.'},
+      wem:{title:'WEM', simple:'Ayuda a planear personas, horarios y desempeño.', technical:'Workforce Engagement Management: forecasting, scheduling, performance y coaching.', receives:'Volumen, tiempos, desempeño, forecast y adherencia.', decides:'Necesidad de capacidad o coaching.', activates:'Ajustes de turnos y mejora continua.'},
+      crm:{title:'CRM', simple:'Sistema donde vive la relación con el cliente.', technical:'Salesforce, Dynamics, ServiceNow u otro CRM integrado por API, app o conector.', receives:'Consulta o actualización de cliente y caso.', decides:'Reglas del negocio dentro del CRM.', activates:'Screen pop, caso, historial y tareas.'},
+      core:{title:'Core / sistema clave', simple:'Sistema donde se valida el dato crítico del negocio: pedido, crédito, viaje, contrato o póliza.', technical:'Core transaccional: pólizas, siniestros, órdenes, solicitudes, HRIS, inventario, contratos o productos.', receives:'Consulta por folio, pedido, producto, contrato, cuenta o cobertura.', decides:'Elegibilidad, disponibilidad, estatus y reglas de negocio.', activates:'Validación, restricción o siguiente paso.'},
+      pay:{title:'Pagos', simple:'Permite consultar saldo, enviar link o registrar promesa.', technical:'Pasarela, cobranza, ledger o sistema de pagos integrado.', receives:'Cliente, saldo, referencia, monto y método.', decides:'Opciones de pago disponibles.', activates:'Link, confirmación o seguimiento.'},
+      notify:{title:'Notificaciones', simple:'Envía mensajes de seguimiento al cliente.', technical:'SMS, email, WhatsApp, webhook o servicios externos de comunicación.', receives:'Resultado, plantilla, canal y destinatario.', decides:'Canal y contenido según reglas.', activates:'Confirmación, recordatorio o actualización.'},
+      survey:{title:'Encuesta / VoC', simple:'Recolecta la opinión del cliente al final.', technical:'Encuestas, feedback, CSAT, NPS y señales de voz del cliente.', receives:'Resultado, canal, cliente y tipo de interacción.', decides:'Si aplicar encuesta y por qué canal.', activates:'Métricas, alertas y mejora continua.'}
+    };
+
+    const nodeIdMap = Object.fromEntries(Object.keys(nodeInfo).map(k => [k, 'n-' + ({web:'web',voice:'voice',id:'id',entry:'entry',bot:'bot',context:'context',architect:'architect',data:'data',routing:'routing',knowledge:'knowledge',ai:'ai',queue:'queue',workspace:'workspace',copilot:'copilot',wrap:'wrap',realtime:'realtime',quality:'quality',wem:'wem',crm:'crm',core:'core',pay:'pay',notify:'notify',survey:'survey'}[k]) ]));
+    const actionId = {identificar:'a-identificar', consultar:'a-consultar', decidir:'a-decidir', asistir:'a-asistir', mejorar:'a-mejorar'};
+    const scenarioList = document.getElementById('scenarioList');
+    const stepper = document.getElementById('stepper');
+    const nodeDetails = document.getElementById('nodeDetails');
+    const storyTitle = document.getElementById('storyTitle');
+    const storyText = document.getElementById('storyText');
+    const storyKicker = document.getElementById('storyKicker');
+    const diagramTitle = document.getElementById('diagramTitle');
+    const diagramSubtitle = document.getElementById('diagramSubtitle');
+    const statePill = document.getElementById('statePill');
+    const toast = document.getElementById('toast');
+    const particle = document.getElementById('particle');
+
+    let currentScenarioKey = 'siniestro';
+    let currentStep = -1;
+    let timer = null;
+    let speed = 1700;
+    let textMode = 'simple';
+    let autoPlaying = false;
+
+    function scenarioButton(key, sc){
+      const btn = document.createElement('button');
+      btn.className = 'scenario';
+      btn.type = 'button';
+      btn.dataset.scenario = key;
+      btn.innerHTML = `<strong>${sc.emoji} ${sc.title.replace('Journey orquestado: ','')}</strong><span>${sc.desc}</span><div class="tag">${sc.tag}</div>`;
+      btn.addEventListener('click', () => selectScenario(key));
+      return btn;
+    }
+
+    function renderScenarios(){
+      scenarioList.innerHTML = '';
+      Object.entries(scenarios).forEach(([key, sc]) => scenarioList.appendChild(scenarioButton(key, sc)));
+    }
+
+    function selectScenario(key){
+      currentScenarioKey = key;
+      currentStep = -1;
+      autoPlaying = false;
+      clearTimeout(timer);
+      const sc = scenarios[key];
+      diagramTitle.textContent = sc.title;
+      diagramSubtitle.textContent = sc.subtitle;
+      document.getElementById('mEntrada').textContent = sc.metrics[0];
+      document.getElementById('mDecision').textContent = sc.metrics[1];
+      document.getElementById('mAgente').textContent = sc.metrics[2];
+      document.getElementById('mSupervisor').textContent = sc.metrics[3];
+      document.querySelectorAll('.scenario').forEach(b => b.classList.toggle('active', b.dataset.scenario === key));
+      resetDiagram();
+      renderSteps();
+      updateAgent(sc, false);
+      storyKicker.textContent = 'Escenario seleccionado';
+      storyTitle.textContent = sc.title.replace('Journey orquestado: ', '');
+      storyText.textContent = 'Presiona iniciar para ver cómo se activan cliente, Genesys Cloud, agente, supervisor y sistemas conectados.';
+      statePill.textContent = 'Listo para iniciar';
+      showToast('Escenario cargado: ' + sc.title.replace('Journey orquestado: ', ''));
+    }
+
+    function renderSteps(){
+      const sc = scenarios[currentScenarioKey];
+      stepper.innerHTML = '';
+      sc.steps.forEach((s, idx) => {
+        const div = document.createElement('div');
+        div.className = 'step-line';
+        div.dataset.step = idx;
+        div.innerHTML = `<div class="step-num">${idx + 1}</div><div><strong>${s.title}</strong><span>${s.text}</span></div>`;
+        div.addEventListener('click', () => activateStep(idx));
+        stepper.appendChild(div);
+      });
+    }
+
+    function resetDiagram(){
+      document.querySelectorAll('.node').forEach(n => n.classList.remove('active','current'));
+      document.querySelectorAll('.conn').forEach(c => c.classList.remove('active'));
+      document.querySelectorAll('.action-token').forEach(a => a.classList.remove('active'));
+      document.querySelectorAll('.step-line').forEach(s => s.classList.remove('active','done'));
+    }
+
+    function activateStep(idx){
+      const sc = scenarios[currentScenarioKey];
+      currentStep = idx;
+      const step = sc.steps[idx];
+      resetDiagram();
+      document.querySelectorAll('.conn.base').forEach(c => c.classList.add('base'));
+      step.nodes.forEach(n => {
+        const el = document.getElementById(nodeIdMap[n]);
+        if(el) el.classList.add('active');
+      });
+      if(step.nodes.length){
+        const currentNode = document.getElementById(nodeIdMap[step.nodes[Math.min(step.nodes.length-1, 1)]]);
+        if(currentNode) currentNode.classList.add('current');
+      }
+      step.conns.forEach(c => {
+        const el = document.getElementById(c);
+        if(el) el.classList.add('active');
+      });
+      step.actions.forEach(a => {
+        const el = document.getElementById(actionId[a]);
+        if(el) el.classList.add('active');
+      });
+      document.querySelectorAll('.step-line').forEach((s, i) => {
+        s.classList.toggle('active', i === idx);
+        s.classList.toggle('done', i < idx);
+      });
+      storyKicker.textContent = 'Paso ' + (idx + 1) + ' de ' + sc.steps.length;
+      storyTitle.textContent = step.title;
+      storyText.textContent = step.text;
+      statePill.textContent = step.title;
+      if(idx >= 3) updateAgent(sc, true);
+      else updateAgent(sc, false);
+      animateParticle(step.conns[0]);
+      showNodeDetail(step.nodes[0] || 'entry');
+    }
+
+    function nextStep(){
+      const sc = scenarios[currentScenarioKey];
+      const next = currentStep + 1 >= sc.steps.length ? 0 : currentStep + 1;
+      activateStep(next);
+    }
+
+    function play(){
+      autoPlaying = true;
+      currentStep = -1;
+      const sc = scenarios[currentScenarioKey];
+      function run(){
+        if(!autoPlaying) return;
+        nextStep();
+        if(currentStep < sc.steps.length - 1){
+          timer = setTimeout(run, speed);
+        } else {
+          autoPlaying = false;
+          timer = setTimeout(() => showToast('Recorrido completo. Puedes elegir otro escenario.'), 300);
+        }
+      }
+      clearTimeout(timer);
+      run();
+    }
+
+    function initials(name){
+      return (name || 'CL').split(' ').map(x => x[0]).slice(0,2).join('').toUpperCase();
+    }
+
+    function setText(id, value){
+      const el = document.getElementById(id);
+      if(el) el.textContent = value;
+    }
+
+    function updateWorkspace(sc, active){
+      const data = workspaceData[currentScenarioKey] || workspaceData.siniestro;
+      const shell = document.getElementById('wsShell');
+      if(shell) shell.classList.toggle('escalated', active);
+      setText('wsActiveBadge', active ? 'Conversación escalada al agente' : 'Esperando escalamiento');
+      setText('wsInteractionStatus', active ? 'Activa' : 'En espera');
+      setText('wsConversationName', active ? data.customer : 'Cliente');
+      setText('wsChannel', data.channel);
+      setText('wsChatAvatar', active ? initials(data.customer) : 'CL');
+      setText('wsChatName', active ? data.customer : 'Cliente identificado');
+      setText('wsMessage1', active ? data.msg1 : 'La conversación llegará aquí cuando el journey escale al agente.');
+      setText('wsMessage2', active ? data.msg2 : 'Genesys preparará el contexto antes de entregar la interacción.');
+      setText('wsInputGhost', active ? 'Responder con contexto, usar Copilot o seleccionar respuesta preestablecida...' : 'Esperando conversación orquestada...');
+      setText('wsScriptTitle', data.script);
+      setText('wsCustomerName', active ? data.customer : 'Cliente identificado');
+      setText('wsCustomerId', active ? data.id : 'Pendiente');
+      setText('wsIntent', active ? data.intent : 'Por identificar');
+      setText('wsCustomerSegment', active ? data.segment : 'Pendiente');
+      setText('wsPriority', active ? data.priority : 'Normal');
+      setText('wsTool1', data.tools[0]);
+      setText('wsTool2', data.tools[1]);
+      setText('wsTool3', data.tools[2]);
+      setText('wsActionButton', active ? data.action : 'Continuar atención');
+      setText('wsCopilotConfidence', active ? sc.agent.confidence : '0%');
+      setText('wsCopilotSummary', active ? data.summary : 'La interacción se resumirá cuando el caso sea escalado.');
+      setText('wsCopilotNBA', active ? data.nba : 'La recomendación aparecerá aquí.');
+      setText('wsCase', active ? data.wrap : 'Pendiente de resultado.');
+      setText('wsProfileAvatar', active ? initials(data.customer) : 'CL');
+      setText('wsProfileName', active ? data.customer : 'Cliente');
+      setText('wsProfileMeta', active ? data.profile : 'Datos sincronizados');
+      setText('wsProfileContact', active ? data.contact : 'Validado por canal');
+      setText('wsLastInteraction', active ? data.last : 'Sin historial visible');
+      setText('wsRisk', active ? data.risk : 'Por calcular');
+      setText('wsJourney1Title', active ? 'Entrada al canal' : 'Entrada al canal');
+      setText('wsJourney1', active ? data.journey[0] : 'El cliente inició conversación.');
+      setText('wsJourney2Title', active ? 'Consulta a sistemas' : 'Consulta a sistemas');
+      setText('wsJourney2', active ? data.journey[1] : 'Genesys recupera contexto.');
+      setText('wsJourney3Title', active ? 'Escalamiento' : 'Escalamiento');
+      setText('wsJourney3', active ? data.journey[2] : 'El agente recibe la interacción.');
+      setText('wsResponse1', data.responses[0]);
+      setText('wsResponse2', data.responses[1]);
+      setText('wsResponse3', data.responses[2]);
+      const metrics = active ? data.metrics : ['00:00','En espera','Neutral','Sin acción'];
+      setText('wsLiveMetric', metrics[0]);
+      setText('wsSlaMetric', metrics[1]);
+      setText('wsSentimentMetric', metrics[2]);
+      setText('wsNextMetric', metrics[3]);
+    }
+
+    function updateAgent(sc, active){
+      document.getElementById('agentStatus').textContent = active ? 'Interacción activa' : 'Esperando interacción';
+      document.getElementById('agentAvatar').textContent = active ? initials(sc.agent.name) : 'CL';
+      document.getElementById('agentName').textContent = active ? sc.agent.name : 'Cliente identificado';
+      document.getElementById('agentMeta').textContent = active ? sc.agent.meta : 'Canal, intención y prioridad aparecerán aquí.';
+      document.getElementById('agentSuggestion').textContent = active ? sc.agent.suggestion : 'La recomendación se activará durante el recorrido.';
+      document.getElementById('confidence').textContent = active ? sc.agent.confidence : '0%';
+      const bars = active ? sc.agent.bars : [0,0,0];
+      document.getElementById('bar1').style.width = bars[0] + '%';
+      document.getElementById('bar2').style.width = bars[1] + '%';
+      document.getElementById('bar3').style.width = bars[2] + '%';
+      updateWorkspace(sc, active);
+    }
+
+    function showNodeDetail(key){
+      const info = nodeInfo[key];
+      if(!info) return;
+      nodeDetails.innerHTML = `
+        <div class="detail-item"><b>📦 Caja</b><p><strong>${info.title}</strong><br>${textMode === 'simple' ? info.simple : info.technical}</p></div>
+        <div class="detail-item"><b>⬇️ Datos que recibe</b><p>${info.receives}</p></div>
+        <div class="detail-item"><b>⚙️ Qué decide</b><p>${info.decides}</p></div>
+        <div class="detail-item"><b>🚀 Qué activa</b><p>${info.activates}</p></div>
+      `;
+      showToast('Caja abierta: ' + info.title);
+    }
+
+    function animateParticle(connId){
+      if(!connId) return;
+      const path = document.getElementById(connId);
+      if(!path || window.innerWidth <= 1100) return;
+      const d = path.getAttribute('d');
+      particle.classList.remove('run');
+      particle.style.offsetPath = `path('${d}')`;
+      particle.style.offsetDistance = '0%';
+      particle.getBoundingClientRect();
+      particle.classList.add('run');
+    }
+
+    function showToast(msg){
+      toast.textContent = msg;
+      toast.classList.add('show');
+      clearTimeout(showToast.t);
+      showToast.t = setTimeout(() => toast.classList.remove('show'), 1500);
+    }
+
+    function setTextMode(mode){
+      textMode = mode;
+      document.querySelectorAll('[data-mode]').forEach(b => b.classList.toggle('active', b.dataset.mode === mode));
+      document.getElementById('toggleSimple').textContent = mode === 'simple' ? 'Modo simple' : 'Modo técnico';
+      document.getElementById('plainIntro').textContent = mode === 'simple'
+        ? 'La demo inicia cuando el cliente solicita ayuda. Cada caja representa una capacidad que se activa con datos.'
+        : 'La demo representa eventos de canal, contexto, flows, integraciones, routing, agent assist, analytics y WEM como un sistema orquestado.';
+      const activeNode = document.querySelector('.node.active');
+      if(activeNode) showNodeDetail(activeNode.dataset.node);
+    }
+
+    document.querySelectorAll('.node').forEach(n => n.addEventListener('click', () => showNodeDetail(n.dataset.node)));
+    document.getElementById('playBtn').addEventListener('click', play);
+    document.getElementById('heroStart').addEventListener('click', () => { document.getElementById('demo').scrollIntoView({behavior:'smooth'}); play(); });
+    document.getElementById('nextBtn').addEventListener('click', () => { autoPlaying = false; clearTimeout(timer); nextStep(); });
+    document.getElementById('heroNext').addEventListener('click', () => { document.getElementById('demo').scrollIntoView({behavior:'smooth'}); autoPlaying = false; clearTimeout(timer); nextStep(); });
+    document.querySelectorAll('[data-speed]').forEach(btn => btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-speed]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      speed = btn.dataset.speed === 'slow' ? 2400 : btn.dataset.speed === 'fast' ? 1050 : 1700;
+      showToast('Velocidad: ' + btn.textContent);
+    }));
+    document.querySelectorAll('[data-mode]').forEach(btn => btn.addEventListener('click', () => setTextMode(btn.dataset.mode)));
+    document.getElementById('toggleSimple').addEventListener('click', () => setTextMode(textMode === 'simple' ? 'technical' : 'simple'));
+
+    renderScenarios();
+    selectScenario('siniestro');
+    showNodeDetail('entry');
+  </script>
+</body>
+</html>
